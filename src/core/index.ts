@@ -6,6 +6,8 @@ export {
   PLATE_ROW_CAPACITIES,
   PLATE_SLOT_COUNTS,
   PLATE_TIERS,
+  isColumnIndex,
+  isPlateTier,
   type Build,
   type ColumnIndex,
   type GadgetSlotSize,
@@ -13,11 +15,24 @@ export {
   type PlateTier,
 } from "./plate.ts";
 
-export { isValid, type ValidationRules } from "./validate.ts";
+export {
+  indexByCode,
+  indexById,
+  isGadgetSlotSize,
+  isReleasedGadget,
+  releasedGadgets,
+  type PoolGadget,
+} from "./pool.ts";
+
+export { mulberry32, randomSeed, type Rng } from "./rng.ts";
+
+export { isValid, validateBuild, type ValidationRules } from "./validate.ts";
 export { randomize, type RandomizeInput } from "./randomize.ts";
 export {
   SHARE_ENCODING_VERSION,
   SHARE_HASH_KEY,
+  ShareCodeError,
   decodeBuild,
   encodeBuild,
+  shareHash,
 } from "./encode.ts";
