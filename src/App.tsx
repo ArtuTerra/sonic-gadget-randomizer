@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Credits } from "./components/Credits.tsx";
+import { DatabankList } from "./components/DatabankList.tsx";
 import { Plate } from "./components/Plate.tsx";
 import { databank } from "./data/index.ts";
 import "./index.css";
@@ -12,8 +14,9 @@ export default function App() {
         <p className="eyebrow">Sonic Racing: CrossWorlds</p>
         <h1>Gadget Randomizer</h1>
         <p className="lede">
-          Press the button, get a random valid gadget build. This is the project
-          skeleton, so the plate stays empty for now.
+          Press the button, get a random valid gadget build. The databank below
+          is the real gadget list. The randomizer itself is still a later
+          milestone, so the plate stays empty for now.
         </p>
       </header>
 
@@ -48,14 +51,31 @@ export default function App() {
           <h2>Your build</h2>
           <p className="empty-build">Nothing equipped.</p>
           <p className="seed-note">
-            Databank: {databank.gadgets.length} placeholder gadgets. The real
-            list is a later milestone, so these names are examples only.
+            Databank: {databank.gadgets.length} gadgets (
+            {
+              databank.gadgets.filter((gadget) => gadget.status === "released")
+                .length
+            }{" "}
+            released,{" "}
+            {
+              databank.gadgets.filter((gadget) => gadget.status === "upcoming")
+                .length
+            }{" "}
+            upcoming). Rolls still come in a later milestone.
           </p>
         </aside>
       </main>
 
+      <DatabankList gadgets={databank.gadgets} />
+      <Credits />
+
       <footer className="site-footer">
         <p>Fan project, not affiliated with SEGA.</p>
+        <p>
+          <a href="#databank">Gadget list</a>
+          {" · "}
+          <a href="#credits">Credits</a>
+        </p>
       </footer>
     </>
   );

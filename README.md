@@ -2,7 +2,7 @@
 
 A personal fan-made app that will roll a random **valid** gadget build for [Sonic Racing: CrossWorlds](https://sonic.fandom.com/wiki/Sonic_Racing:_CrossWorlds) and show it on a gadget plate.
 
-This repository is the project skeleton (milestone M0). The page has a Randomize button and an empty plate. It does **not** roll real builds yet, and the gadget list is a handful of placeholders. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
+The page has a Randomize button, an empty plate, and the full gadget databank with local icons. It does **not** roll real builds yet. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
 
 **Fan project, not affiliated with SEGA.**
 
@@ -42,16 +42,17 @@ The dev server does **not** install a service worker. Offline mode and "Install 
 
 ## Scripts
 
-| Command                 | What it does                                                   |
-| ----------------------- | -------------------------------------------------------------- |
-| `npm run dev`           | Start the Vite dev server.                                     |
-| `npm test`              | Run the Vitest suite once.                                     |
-| `npm run validate:data` | Check `src/data/gadgets.json` against the Zod schema.          |
-| `npm run lint`          | ESLint, then Prettier in check mode.                           |
-| `npm run format`        | Rewrite files with Prettier.                                   |
-| `npm run typecheck`     | Typecheck the app and the Vite config.                         |
-| `npm run build`         | Typecheck, then write the static site to `dist/`.              |
-| `npm run preview`       | Serve the `dist/` build locally, including the service worker. |
+| Command                  | What it does                                                   |
+| ------------------------ | -------------------------------------------------------------- |
+| `npm run dev`            | Start the Vite dev server.                                     |
+| `npm test`               | Run the Vitest suite once.                                     |
+| `npm run validate:data`  | Check `src/data/gadgets.json` against the Zod schema.          |
+| `npm run import:gadgets` | Re-download the wiki gadget table and icons into the repo.     |
+| `npm run lint`           | ESLint, then Prettier in check mode.                           |
+| `npm run format`         | Rewrite files with Prettier.                                   |
+| `npm run typecheck`      | Typecheck the app and the Vite config.                         |
+| `npm run build`          | Typecheck, then write the static site to `dist/`.              |
+| `npm run preview`        | Serve the `dist/` build locally, including the service worker. |
 
 To try the production app on your computer:
 
@@ -115,14 +116,18 @@ The Randomize button still will not roll a build. That comes in a later mileston
 docs/PLAN.md          The full project plan. Read this before a milestone.
 AGENTS.md             Notes for AI assistants working in this repo.
 src/main.tsx          React entry. Registers the service worker.
-src/App.tsx           Placeholder home page.
-src/components/       React UI. Plate is the empty 2×3 grid.
+src/App.tsx           Home page: empty plate, gadget list, and credits.
+src/components/       React UI. Plate is the empty 2×3 grid. The databank
+                      list and credits sit under it.
 src/core/             Framework-free TypeScript: plate rules, and the
                       future randomizer, validator, and share-code logic.
                       No React and no browser APIs. Safe to reuse on Android.
-src/data/gadgets.json Placeholder gadget databank (a few examples).
+src/data/gadgets.json Gadget databank imported from Sonic Wiki Zone.
 src/data/schema.ts    Zod schema and the TypeScript types it infers.
-public/               Favicon and placeholder PWA icons.
+scripts/import-gadgets.ts
+                      Re-fetches the wiki table, writes the JSON, and saves
+                      icons under public/icons/gadgets/.
+public/               Favicon, PWA icons, and local gadget icons.
 dist/                 Production build. Created by npm run build. Not committed.
 ```
 
@@ -140,4 +145,14 @@ A gadget uses 1, 2, or 3 slots and must fit inside one row. The same gadget cann
 
 ## What is left
 
-The roadmap is the milestone table in [docs/PLAN.md §7a](docs/PLAN.md). Next up is deploying the hello page (M1) and replacing the placeholder gadgets with the real databank (M2). The randomizer, the drawn plate, and share links come after that.
+The roadmap is the milestone table in [docs/PLAN.md §7a](docs/PLAN.md). The gadget databank and local icons are in place (M2 and M3). The randomizer, the drawn plate, and share links come after that.
+
+## Refresh the gadget list
+
+Game updates change the wiki table. From the repo root:
+
+```bash
+npm run import:gadgets
+```
+
+That fetches the [gadget page](<https://sonic.fandom.com/wiki/Gadget_(Sonic_Racing:_CrossWorlds)>), rewrites `src/data/gadgets.json`, and saves 128px WebP icons in `public/icons/gadgets/`. Add an original one-line effect in `scripts/gadget-copy.ts` before importing a gadget the wiki has not listed before. The script keeps existing numeric codes and does not reuse one if a gadget disappears.

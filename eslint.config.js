@@ -30,5 +30,14 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    files: ["scripts/**/*.ts"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
   prettier,
 );
