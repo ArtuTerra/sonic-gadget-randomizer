@@ -1,8 +1,8 @@
 # CrossWorlds Gadget Randomizer
 
-A personal fan-made app that will roll a random **valid** gadget build for [Sonic Racing: CrossWorlds](https://sonic.fandom.com/wiki/Sonic_Racing:_CrossWorlds) and show it on a gadget plate.
+A personal fan-made app that rolls a random **valid** gadget build for [Sonic Racing: CrossWorlds](https://sonic.fandom.com/wiki/Sonic_Racing:_CrossWorlds) and shows it on a gadget plate.
 
-The page has a Randomize button, an empty plate, and the full gadget databank with local icons. It does **not** roll real builds yet. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
+Pick a plate from Normal through Master, press Randomize, and copy a share link. Opening that link shows the same build. The full gadget list stays under **All gadgets**. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
 
 **Fan project, not affiliated with SEGA.**
 
@@ -36,7 +36,7 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:5173>. You should see the title, an empty 2×3 plate, and a Randomize button. The button does not generate a build yet; it only confirms the page is wired up.
+Open <http://localhost:5173>. You should see a Master plate with a random build, a Randomize button, and a share link. Change the plate to watch locked cells appear on the smaller tiers. **All gadgets** at the bottom opens the full list.
 
 The dev server does **not** install a service worker. Offline mode and "Install app" apply to the production build (see below) or to the deployed site.
 
@@ -73,7 +73,7 @@ The app is a static site. There is no server to run.
 | Output directory | `dist`          |
 | Node version     | 22              |
 
-Share links will use the URL hash (`#b=...`), so the host does not need redirect rules for this app.
+Share links use the URL hash (`#b=...`), so the host does not need redirect rules for this app.
 
 The GitHub repository is private. Do not use GitHub Pages: the free plan does not serve private repositories, and this project is meant for Cloudflare Pages or Vercel. Both can deploy a private GitHub repo on their free tiers and give you a URL (`*.pages.dev` or `*.vercel.app`). Connecting either host needs **your** Cloudflare or Vercel account; this repo only documents the steps.
 
@@ -108,7 +108,7 @@ Do this after the site is deployed (the phone needs an `https://` address; your 
 4. Open the new home-screen icon. It should launch full screen, without the address bar.
 5. Turn on airplane mode and open the icon again. The cached page should still load.
 
-The Randomize button still will not roll a build. That comes in a later milestone. Offline here means the shell opens without a network.
+After the first online load, airplane mode should still open the app, show the icons, and roll a new build. The gadget icons are part of the service worker precache.
 
 ## Project layout
 
@@ -116,12 +116,12 @@ The Randomize button still will not roll a build. That comes in a later mileston
 docs/PLAN.md          The full project plan. Read this before a milestone.
 AGENTS.md             Notes for AI assistants working in this repo.
 src/main.tsx          React entry. Registers the service worker.
-src/App.tsx           Home page: empty plate, gadget list, and credits.
-src/components/       React UI. Plate is the empty 2×3 grid. The databank
-                      list and credits sit under it.
-src/core/             Framework-free TypeScript: plate rules, and the
-                      future randomizer, validator, and share-code logic.
-                      No React and no browser APIs. Safe to reuse on Android.
+src/App.tsx           Home page: plate, build list, share link, and the
+                      collapsible gadget list.
+src/components/       React UI. Plate draws each gadget across its slots.
+src/core/             Framework-free TypeScript: plate rules, randomizer,
+                      validator, and share codes. No React and no browser
+                      APIs. Safe to reuse on Android.
 src/data/gadgets.json Gadget databank imported from Sonic Wiki Zone.
 src/data/schema.ts    Zod schema and the TypeScript types it infers.
 scripts/import-gadgets.ts
@@ -143,9 +143,17 @@ Plate capacities, encoded in `src/core/plate.ts` as `[top row, bottom row]`:
 
 A gadget uses 1, 2, or 3 slots and must fit inside one row. The same gadget cannot be equipped twice.
 
+## How a roll is chosen
+
+The randomizer lists every way to fill the open cells with gadget sizes 1, 2, and 3, one shape per row. It drops shapes the released pool cannot fill, then picks one of the remaining shapes at random. Gadgets of the needed sizes are shuffled in next. That keeps a 3-slot row as likely as a row of three 1-slot gadgets. Weighting shapes by how many gadgets exist would make about 94% of Master builds six 1-slot gadgets, because there are so many of those combinations.
+
+Every full build the pool can make can still come up. The same gadget is never used twice. Overlapping effects are allowed. Pass a `seed` or an `rng` function when you need the same roll again; the tests do this.
+
+Share links look like `#b=1.11-0o.31.pmaster`. Each pair of characters is a gadget code in base 36, `--` is an empty open cell, and `.p` is the plate. The hash needs no server.
+
 ## What is left
 
-The roadmap is the milestone table in [docs/PLAN.md §7a](docs/PLAN.md). The gadget databank and local icons are in place (M2 and M3). The randomizer, the drawn plate, and share links come after that.
+The roadmap is the milestone table in [docs/PLAN.md §7a](docs/PLAN.md). The databank, icons, randomizer, plate, and share links are in place. Still later: reroll one gadget, owned-gadget filters, the "allow empty slots" toggle, and highlighting the bad slot on a broken link.
 
 ## Refresh the gadget list
 

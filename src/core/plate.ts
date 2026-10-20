@@ -35,6 +35,10 @@ export const PLATE_TIERS = [
 ] as const;
 export type PlateTier = (typeof PLATE_TIERS)[number];
 
+export function isPlateTier(value: string): value is PlateTier {
+  return (PLATE_TIERS as readonly string[]).includes(value);
+}
+
 /** Slots available on [top row, bottom row]. Each value is 0–3. */
 export const PLATE_ROW_CAPACITIES = {
   normal: [2, 0],
@@ -56,6 +60,10 @@ export const PLATE_SLOT_COUNTS = {
 export const DUPLICATE_GADGETS_ALLOWED = false;
 
 export type ColumnIndex = 0 | 1 | 2;
+
+export function isColumnIndex(value: number): value is ColumnIndex {
+  return value === 0 || value === 1 || value === 2;
+}
 
 /** One equipped gadget. `col` is the start column; width is that gadget's slot size. */
 export interface PlacedGadget {

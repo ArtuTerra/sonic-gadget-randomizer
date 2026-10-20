@@ -18,6 +18,8 @@ function sourceFiles(directory: string): string[] {
 const forbidden = [
   /from\s+["']react["']/,
   /from\s+["']react-dom["']/,
+  /from\s+["'][^"']*\/components\//,
+  /from\s+["'][^"']*\/data\//,
   /\bdocument\b/,
   /\bwindow\b/,
   /\blocalStorage\b/,

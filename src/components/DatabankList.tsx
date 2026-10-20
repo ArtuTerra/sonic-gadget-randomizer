@@ -1,45 +1,7 @@
 import { useMemo, useState } from "react";
+import { GadgetIcon } from "./GadgetIcon.tsx";
 import { CATEGORY_LABELS, type CategoryId } from "../data/categories.ts";
 import type { Gadget } from "../data/types.ts";
-
-const GLYPH_LABEL: Record<string, string> = {
-  ring: "R",
-  drift: "Dr",
-  air: "Air",
-  item: "It",
-  kit: "Kit",
-  stat: "St",
-  shield: "Sh",
-  power: "Pw",
-};
-
-function GadgetMark({ gadget }: { gadget: Gadget }) {
-  const [failed, setFailed] = useState(false);
-  if (gadget.icon.src && !failed) {
-    return (
-      <img
-        className="gadget-icon"
-        src={gadget.icon.src}
-        alt=""
-        width={56}
-        height={56}
-        onError={() => {
-          setFailed(true);
-        }}
-      />
-    );
-  }
-
-  return (
-    <span
-      className="gadget-fallback"
-      style={{ background: gadget.icon.fallback.color }}
-      aria-hidden="true"
-    >
-      {GLYPH_LABEL[gadget.icon.fallback.glyph] ?? "?"}
-    </span>
-  );
-}
 
 function slotLabel(slots: Gadget["slots"]): string {
   return slots === 1 ? "1 slot" : `${slots} slots`;
@@ -90,11 +52,7 @@ export function DatabankList({ gadgets }: { gadgets: readonly Gadget[] }) {
   }
 
   return (
-    <section
-      className="databank"
-      id="databank"
-      aria-labelledby="databank-heading"
-    >
+    <section className="databank" aria-labelledby="databank-heading">
       <div className="panel-heading">
         <h2 id="databank-heading">Gadget databank</h2>
         <p>
@@ -160,7 +118,7 @@ export function DatabankList({ gadgets }: { gadgets: readonly Gadget[] }) {
             <ul className="gadget-list">
               {group.gadgets.map((gadget) => (
                 <li key={gadget.id} className="gadget-card">
-                  <GadgetMark gadget={gadget} />
+                  <GadgetIcon gadget={gadget} />
                   <div>
                     <h4>{gadget.name}</h4>
                     <p className="gadget-meta">
