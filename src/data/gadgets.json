@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "placeholder": true,
+  "gameVersion": "1.4.1",
+  "source": "https://sonic.fandom.com/wiki/Gadget_(Sonic_Racing:_CrossWorlds)",
+  "notes": "PLACEHOLDER SEED for milestone M0. These five gadgets only show the shape of the databank. They are not a complete or in-game-verified list. Milestone M2 replaces this file with the full set from docs/PLAN.md Appendix A. Ids and codes below follow that appendix so later data can keep the same stable codes.",
+  "gadgets": [
+    {
+      "id": "lv1-quick-charge",
+      "code": 37,
+      "name": "Lv1 Quick Charge",
+      "names": { "ja": null, "pt": null },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Level 1 drift charge fills faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [
+        {
+          "key": "drift-charge-lv1",
+          "kind": "charge-level",
+          "stacking": "additive",
+          "value": null,
+          "confidence": "community-unverified"
+        }
+      ],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/lv1-quick-charge.webp",
+        "sourceUrl": null,
+        "credit": "Placeholder. This skeleton does not ship game icons.",
+        "fallback": { "glyph": "drift", "color": "#3BA7FF" }
+      },
+      "lastVerified": null,
+      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+    },
+    {
+      "id": "air-trick-adept",
+      "code": 31,
+      "name": "Air Trick Adept",
+      "names": { "ja": null, "pt": null },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Makes air tricks a little easier.",
+      "tags": ["air-trick"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": ["air-trick-expert"],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-adept.webp",
+        "sourceUrl": null,
+        "credit": "Placeholder. This skeleton does not ship game icons.",
+        "fallback": { "glyph": "air", "color": "#7DDE92" }
+      },
+      "lastVerified": null,
+      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+    },
+    {
+      "id": "air-trick-expert",
+      "code": 32,
+      "name": "Air Trick Expert",
+      "names": { "ja": null, "pt": null },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Makes air tricks easier. Can be equipped together with Air Trick Adept.",
+      "tags": ["air-trick"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": ["air-trick-adept"],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-expert.webp",
+        "sourceUrl": null,
+        "credit": "Placeholder. This skeleton does not ship game icons.",
+        "fallback": { "glyph": "air", "color": "#3BA7FF" }
+      },
+      "lastVerified": null,
+      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+    },
+    {
+      "id": "ring-range-up",
+      "code": 24,
+      "name": "Ring Range UP",
+      "names": { "ja": null, "pt": null },
+      "category": "ring-ability",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Lets you pick up rings from farther away.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-range-up.webp",
+        "sourceUrl": null,
+        "credit": "Placeholder. This skeleton does not ship game icons.",
+        "fallback": { "glyph": "ring", "color": "#F0C14A" }
+      },
+      "lastVerified": null,
+      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+    },
+    {
+      "id": "drift-charge-kit",
+      "code": 109,
+      "name": "Drift Charge Kit",
+      "names": { "ja": null, "pt": null },
+      "category": "standard-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "standard",
+      "kitAffinity": null,
+      "description": "A standard kit themed around drift charge. It fills one whole row.",
+      "tags": ["drift", "charge", "kit"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 78,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 78 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/drift-charge-kit.webp",
+        "sourceUrl": null,
+        "credit": "Placeholder. This skeleton does not ship game icons.",
+        "fallback": { "glyph": "kit", "color": "#C084FC" }
+      },
+      "lastVerified": null,
+      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game. kitContains is empty until the real parts are known."
+    }
+  ]
+}
