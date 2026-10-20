@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BuildList } from "./components/BuildList.tsx";
 import { Credits } from "./components/Credits.tsx";
 import { DatabankList } from "./components/DatabankList.tsx";
@@ -19,6 +19,9 @@ import {
 } from "./core/index.ts";
 import { databank, type Gadget } from "./data/index.ts";
 import "./index.css";
+
+const GAME_TITLE = "Sonic Racing: CrossWorlds";
+const LOGO_SRC = "/icons/sonic-racing-crossworlds-logo.webp";
 
 const pool: PoolGadget[] = databank.gadgets.map((gadget) => ({
   id: gadget.id,
@@ -65,11 +68,7 @@ export default function App() {
   const [initial] = useState(readInitialRoll);
   const [build, setBuild] = useState(initial.build);
   const [notice, setNotice] = useState(initial.notice);
-  const [copyState, setCopyState] = useState<"idle" | "copied" | "manual">(
-    "idle",
-  );
-  const shareInput = useRef<HTMLInputElement>(null);
-  const copyTimer = useRef<number | null>(null);
+  const [logoOk, setLogoOk] = useState(true);
   const shareUrl = shareUrlFor(build);
 
   useEffect(() => {
@@ -87,7 +86,6 @@ export default function App() {
       try {
         setBuild(decodeBuild(hash, pool));
         setNotice(null);
-        setCopyState("idle");
       } catch {
         setNotice("This build is no longer valid (game update?).");
       }
@@ -99,24 +97,6 @@ export default function App() {
   function showBuild(next: Build) {
     setBuild(next);
     setNotice(null);
-    setCopyState("idle");
-  }
-
-  async function copyShareLink() {
-    window.history.replaceState(null, "", shareUrl);
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopyState("copied");
-      if (copyTimer.current !== null) window.clearTimeout(copyTimer.current);
-      copyTimer.current = window.setTimeout(() => {
-        setCopyState("idle");
-        copyTimer.current = null;
-      }, 2000);
-    } catch {
-      setCopyState("manual");
-      shareInput.current?.focus();
-      shareInput.current?.select();
-    }
   }
 
   const equipped = build.rows.flat().length;
@@ -124,12 +104,30 @@ export default function App() {
   return (
     <>
       <header className="site-header">
-        <div>
-          <p className="eyebrow">Sonic Racing: CrossWorlds</p>
-          <h1>Gadget Randomizer</h1>
+        <div className="brand">
+          <h1 className="game-title">
+            {logoOk ? (
+              <img
+                className="game-logo"
+                src={LOGO_SRC}
+                alt=""
+                width={1600}
+                height={723}
+                onError={() => {
+                  setLogoOk(false);
+                }}
+              />
+            ) : null}
+            <span
+              className={logoOk ? "visually-hidden" : "game-title-fallback"}
+            >
+              {GAME_TITLE}
+            </span>
+          </h1>
+          <p className="app-kicker">Gadget Randomizer</p>
           <p className="lede">
-            Roll a random valid gadget build, then copy a link to share the same
-            plate.
+            Roll a random valid gadget build. This page's address is a link to
+            the same build.
           </p>
         </div>
         <div className="plate-picker">
@@ -153,7 +151,7 @@ export default function App() {
       </header>
 
       <main className="layout">
-        <section className="panel" aria-labelledby="plate-heading">
+        <section className="panel plate-panel" aria-labelledby="plate-heading">
           <div className="panel-heading">
             <h2 id="plate-heading">Gadget plate</h2>
             <p>
@@ -161,61 +159,33 @@ export default function App() {
             </p>
           </div>
           <Plate build={build} gadgetsById={gadgetsById} />
-          <p className="rules">
-            Gadgets take 1, 2, or 3 slots and stay inside one row. The same
-            gadget is never equipped twice. Overlapping effects are allowed.
-            {build.plate !== "master"
-              ? " Locked cells are outside this plate."
-              : ""}
-          </p>
-          <div className="actions">
-            <button
-              type="button"
-              className="randomize"
-              onClick={() => {
-                showBuild(roll(build.plate));
-              }}
-            >
-              Randomize
-            </button>
-            <button
-              type="button"
-              className="secondary"
-              onClick={() => void copyShareLink()}
-            >
-              {copyState === "copied" ? "Copied" : "Copy share link"}
-            </button>
-          </div>
-          <label className="share-link">
-            Share link
-            <input
-              ref={shareInput}
-              readOnly
-              value={shareUrl}
-              spellCheck={false}
-              onFocus={(event) => {
-                event.currentTarget.select();
-              }}
-            />
-          </label>
-          <p className="status" role="status">
-            {notice
-              ? notice
-              : copyState === "manual"
-                ? "Select the share link and copy it."
-                : `${plateLabel(build.plate)} build, ${equipped} ${equipped === 1 ? "gadget" : "gadgets"}.`}
-          </p>
+          {notice ? (
+            <p className="notice" role="status">
+              {notice}
+            </p>
+          ) : null}
+          <button
+            type="button"
+            className="randomize"
+            onClick={() => {
+              showBuild(roll(build.plate));
+            }}
+          >
+            Randomize
+          </button>
         </section>
 
-        <aside className="panel" aria-labelledby="build-heading">
-          <div className="panel-heading">
-            <h2 id="build-heading">Your build</h2>
-            <p>
-              {equipped} {equipped === 1 ? "gadget" : "gadgets"}
-            </p>
-          </div>
-          <div className="build-scroll">
-            <BuildList build={build} gadgetsById={gadgetsById} />
+        <aside className="panel build-panel" aria-labelledby="build-heading">
+          <div className="build-panel-fill">
+            <div className="panel-heading">
+              <h2 id="build-heading">Your build</h2>
+              <p>
+                {equipped} {equipped === 1 ? "gadget" : "gadgets"}
+              </p>
+            </div>
+            <div className="build-scroll">
+              <BuildList build={build} gadgetsById={gadgetsById} />
+            </div>
           </div>
         </aside>
       </main>

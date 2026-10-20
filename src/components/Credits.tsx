@@ -1,5 +1,5 @@
 import { databank } from "../data/index.ts";
-import { ICON_CREDIT } from "../data/credits.ts";
+import { ICON_CREDIT, LOGO_SOURCE } from "../data/credits.ts";
 
 export function Credits() {
   const verified =
@@ -23,6 +23,11 @@ export function Credits() {
           {iconCount} gadget icons: {ICON_CREDIT}. Each file page is stored on
           that gadget as <code>icon.sourceUrl</code>. The files in this project
           are local copies, not hotlinked.
+        </li>
+        <li>
+          The header logo is a local copy of the official{" "}
+          <a href={LOGO_SOURCE}>Sonic Racing: CrossWorlds logo</a>,{" "}
+          {ICON_CREDIT}. It is not hotlinked.
         </li>
         <li>
           Gadgets with no file on the wiki use an original fallback mark. They
