@@ -1,67 +1,841 @@
 {
   "schemaVersion": 1,
-  "placeholder": true,
   "gameVersion": "1.4.1",
   "source": "https://sonic.fandom.com/wiki/Gadget_(Sonic_Racing:_CrossWorlds)",
-  "notes": "PLACEHOLDER SEED for milestone M0. These five gadgets only show the shape of the databank. They are not a complete or in-game-verified list. Milestone M2 replaces this file with the full set from docs/PLAN.md Appendix A. Ids and codes below follow that appendix so later data can keep the same stable codes.",
+  "notes": "Imported from the Sonic Wiki Zone gadget table. Descriptions are original short paraphrases, not wiki text. Unlock cells with inferred true were blank on that row and taken from the spanned cell above. They are not checked in game. kitContains is empty: the wiki describes kit effects but does not name component gadget ids. effects is empty: stacking beyond Air Trick Adept and Air Trick Expert is not recorded here. timeTrialValid is null: the wiki does not say which gadgets Time Trial rejects. Upcoming gadgets are not in the current game. Icons the wiki does not host use the fallback.",
   "gadgets": [
     {
-      "id": "lv1-quick-charge",
-      "code": 37,
-      "name": "Lv1 Quick Charge",
-      "names": { "ja": null, "pt": null },
-      "category": "charge-upgrade",
-      "slots": 2,
+      "id": "champion-bounty",
+      "code": 1,
+      "name": "Champion Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 3,
       "isKit": false,
       "kitType": null,
       "kitAffinity": null,
-      "description": "Level 1 drift charge fills faster.",
-      "tags": ["drift", "charge", "boost"],
+      "description": "Earn rings while you are running in the top three.",
+      "tags": ["rings"],
       "unlock": {
-        "type": "start",
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/champion-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Champion_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "route-planner-bounty",
+      "code": 2,
+      "name": "Route Planner Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Choosing a Travel Ring pays 100 rings and raises your ring cap.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/route-planner-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Route_Planner_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "starting-boost-bounty",
+      "code": 3,
+      "name": "Starting Boost Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A clean start pays rings.",
+      "tags": ["rings", "start", "boost"],
+      "unlock": {
+        "type": "grand-prix",
         "plate": null,
         "races": null,
         "worldMatchRank": null,
         "festival": null,
         "shop": null,
-        "text": "Available from the start",
+        "text": "Finish a Grand Prix",
         "inferred": false
       },
       "status": "released",
       "addedIn": null,
       "timeTrialValid": null,
       "stacksWith": [],
-      "effects": [
-        {
-          "key": "drift-charge-lv1",
-          "kind": "charge-level",
-          "stacking": "additive",
-          "value": null,
-          "confidence": "community-unverified"
-        }
-      ],
+      "effects": [],
       "kitContains": [],
       "icon": {
-        "src": "/icons/gadgets/lv1-quick-charge.webp",
-        "sourceUrl": null,
-        "credit": "Placeholder. This skeleton does not ship game icons.",
-        "fallback": { "glyph": "drift", "color": "#3BA7FF" }
+        "src": "/icons/gadgets/starting-boost-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Starting_Boost_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
       },
-      "lastVerified": null,
-      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+      "lastVerified": "2026-10-20",
+      "notes": ""
     },
     {
-      "id": "air-trick-adept",
-      "code": 31,
-      "name": "Air Trick Adept",
-      "names": { "ja": null, "pt": null },
-      "category": "technique-upgrade",
+      "id": "air-trick-bounty",
+      "code": 4,
+      "name": "Air Trick Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
       "slots": 1,
       "isKit": false,
       "kitType": null,
       "kitAffinity": null,
-      "description": "Makes air tricks a little easier.",
-      "tags": ["air-trick"],
+      "description": "Each air-trick spin pays a few rings.",
+      "tags": ["rings", "air-trick"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Air_Trick_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "item-attack-bounty",
+      "code": 5,
+      "name": "Item Attack Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Hitting another racer with an item pays rings.",
+      "tags": ["rings", "items", "attack"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-attack-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Attack_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "runoff-bounty",
+      "code": 6,
+      "name": "Runoff Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Speed items keep paying rings while you cross a slowdown zone.",
+      "tags": ["rings", "items"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/runoff-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Runoff_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "slipstream-bounty",
+      "code": 7,
+      "name": "Slipstream Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Rings keep coming in for as long as a slipstream lasts.",
+      "tags": ["rings", "slipstream"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/slipstream-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Slipstream_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "travel-ring-bounty",
+      "code": 8,
+      "name": "Travel Ring Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Passing through a Travel Ring pays rings.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/travel-ring-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Travel_Ring_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "morph-action-bounty",
+      "code": 9,
+      "name": "Morph Action Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A Charge Dash on the water or in the air pays rings.",
+      "tags": ["rings", "water", "flight"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "E+",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank E+",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/morph-action-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Morph_Action_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "perfect-charge-bounty",
+      "code": 10,
+      "name": "Perfect Charge Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Letting go of a drift the instant a charge level completes pays rings.",
+      "tags": ["rings", "drift", "charge"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "C",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank C",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/perfect-charge-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Perfect_Charge_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "dash-panel-bounty",
+      "code": 11,
+      "name": "Dash Panel Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Dash Panels and Dash Gates pay rings.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "grand-prix",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish a Grand Prix",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/dash-panel-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Dash_Panel_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "dash-panel-mini-bounty",
+      "code": 12,
+      "name": "Dash Panel Mini Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Dash Panels and Dash Gates pay a smaller handful of rings.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/dash-panel-mini-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Dash_Panel_Mini_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "dash-panel-combo-bounty",
+      "code": 13,
+      "name": "Dash Panel Combo Bounty",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-gain",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "One Dash Panel pays 3 rings, and a chain of them pays more.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "D",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank D",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/dash-panel-combo-bounty.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Dash_Panel_Combo_Bounty.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#F0C14A"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ring-doubler",
+      "code": 14,
+      "name": "Ring Doubler",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Ring pickups are doubled. Team Matches ignore this.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-doubler.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Doubler.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "less-is-more",
+      "code": 15,
+      "name": "Less is More",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Top speed climbs when you are holding fewer rings.",
+      "tags": ["rings", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/less-is-more.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Less_is_More.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ring-engine",
+      "code": 16,
+      "name": "Ring Engine",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "While you hold at least one ring, every stat is +12, and rings drain slowly.",
+      "tags": ["rings", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-engine.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Engine.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "hyper-ring-engine",
+      "code": 17,
+      "name": "Hyper Ring Engine",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Stats rise with how many rings you hold, and those rings drain slowly.",
+      "tags": ["rings", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/hyper-ring-engine.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Hyper_Ring_Engine.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "130-ring-limit",
+      "code": 18,
+      "name": "130 Ring Limit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Your ring cap becomes 130.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "grand-prix",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish a Grand Prix",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/130-ring-limit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Limit_130.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "200-ring-limit",
+      "code": 19,
+      "name": "200 Ring Limit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Your ring cap becomes 200.",
+      "tags": ["rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/200-ring-limit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Limit_200.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "mini-ring-thief",
+      "code": 20,
+      "name": "Mini Ring Thief",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A collision takes a few rings from the other machine.",
+      "tags": ["rings", "collision"],
       "unlock": {
         "type": "plate",
         "plate": "gold",
@@ -75,66 +849,164 @@
       "status": "released",
       "addedIn": null,
       "timeTrialValid": null,
-      "stacksWith": ["air-trick-expert"],
+      "stacksWith": [],
       "effects": [],
       "kitContains": [],
       "icon": {
-        "src": "/icons/gadgets/air-trick-adept.webp",
-        "sourceUrl": null,
-        "credit": "Placeholder. This skeleton does not ship game icons.",
-        "fallback": { "glyph": "air", "color": "#7DDE92" }
+        "src": "/icons/gadgets/mini-ring-thief.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Mini_Ring_Thief.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
       },
-      "lastVerified": null,
-      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+      "lastVerified": "2026-10-20",
+      "notes": ""
     },
     {
-      "id": "air-trick-expert",
-      "code": 32,
-      "name": "Air Trick Expert",
-      "names": { "ja": null, "pt": null },
-      "category": "technique-upgrade",
+      "id": "ring-thief",
+      "code": 21,
+      "name": "Ring Thief",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
       "slots": 2,
       "isKit": false,
       "kitType": null,
       "kitAffinity": null,
-      "description": "Makes air tricks easier. Can be equipped together with Air Trick Adept.",
-      "tags": ["air-trick"],
+      "description": "A collision takes rings from the other machine.",
+      "tags": ["rings", "collision"],
       "unlock": {
-        "type": "start",
-        "plate": null,
+        "type": "plate",
+        "plate": "master",
         "races": null,
         "worldMatchRank": null,
         "festival": null,
         "shop": null,
-        "text": "Available from the start",
+        "text": "Reach Master Plate",
         "inferred": false
       },
       "status": "released",
       "addedIn": null,
       "timeTrialValid": null,
-      "stacksWith": ["air-trick-adept"],
+      "stacksWith": [],
       "effects": [],
       "kitContains": [],
       "icon": {
-        "src": "/icons/gadgets/air-trick-expert.webp",
-        "sourceUrl": null,
-        "credit": "Placeholder. This skeleton does not ship game icons.",
-        "fallback": { "glyph": "air", "color": "#3BA7FF" }
+        "src": "/icons/gadgets/ring-thief.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Thief.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
       },
-      "lastVerified": null,
-      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+      "lastVerified": "2026-10-20",
+      "notes": ""
     },
     {
-      "id": "ring-range-up",
-      "code": 24,
-      "name": "Ring Range UP",
-      "names": { "ja": null, "pt": null },
+      "id": "ring-gain-mini-boost",
+      "code": 22,
+      "name": "Ring Gain Mini Boost",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
       "category": "ring-ability",
       "slots": 1,
       "isKit": false,
       "kitType": null,
       "kitAffinity": null,
-      "description": "Lets you pick up rings from farther away.",
+      "description": "Picking up rings gives you a small speed burst.",
+      "tags": ["rings", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-gain-mini-boost.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Gain_Mini_Boost.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ring-gain-boost",
+      "code": 23,
+      "name": "Ring Gain Boost",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Picking up rings gives you a speed burst.",
+      "tags": ["rings", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-gain-boost.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Gain_Boost.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ring-range-up",
+      "code": 24,
+      "name": "Ring Range UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "ring-ability",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You can collect rings from farther away.",
       "tags": ["rings"],
       "unlock": {
         "type": "plate",
@@ -154,25 +1026,3643 @@
       "kitContains": [],
       "icon": {
         "src": "/icons/gadgets/ring-range-up.webp",
-        "sourceUrl": null,
-        "credit": "Placeholder. This skeleton does not ship game icons.",
-        "fallback": { "glyph": "ring", "color": "#F0C14A" }
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Range_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "ring",
+          "color": "#E0A106"
+        }
       },
-      "lastVerified": null,
-      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game."
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "hit-and-run",
+      "code": 25,
+      "name": "Hit and Run",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Landing an item hit starts a boost that ignores runoff slowdown.",
+      "tags": ["items", "attack", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Hit and Run.png, but that file is not on the wiki."
+    },
+    {
+      "id": "extended-slipstream",
+      "code": 26,
+      "name": "Extended Slipstream",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You pick up a slipstream more often.",
+      "tags": ["slipstream"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/extended-slipstream.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Extended_Slipstream.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "air-drift-mobility-up",
+      "code": 27,
+      "name": "Air Drift Mobility UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Air drifts turn tighter while you are in flight form.",
+      "tags": ["drift", "flight"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-drift-mobility-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Air_Drift_Mobility_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "charge-jump-mobility-up",
+      "code": 28,
+      "name": "Charge Jump Mobility UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Sideways air tricks during a water Charge Jump travel farther.",
+      "tags": ["charge", "air-trick", "water"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/charge-jump-mobility-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Charge_Jump_Mobility_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "ultimate-air-trick",
+      "code": 29,
+      "name": "Ultimate Air Trick",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "More than three air tricks makes you briefly invincible.",
+      "tags": ["air-trick", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ultimate-air-trick.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ultimate_Air_Trick.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "perfect-landing",
+      "code": 30,
+      "name": "Perfect Landing",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Accelerating the moment you land gives you a speed burst.",
+      "tags": ["boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/perfect-landing.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Perfect_Landing.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "air-trick-adept",
+      "code": 31,
+      "name": "Air Trick Adept",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Air tricks come out faster. This pairs with Air Trick Expert.",
+      "tags": ["air-trick"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": ["air-trick-expert"],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-adept.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Air_Trick_Adept.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "air-trick-expert",
+      "code": 32,
+      "name": "Air Trick Expert",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Air tricks come out much faster. This pairs with Air Trick Adept.",
+      "tags": ["air-trick"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": ["air-trick-adept"],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-expert.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Air_Trick_Expert.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "collision-mini-boost",
+      "code": 33,
+      "name": "Collision Mini Boost",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bumping another machine gives you a small boost.",
+      "tags": ["collision", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Collision Mini Boost.png, but that file is not on the wiki."
+    },
+    {
+      "id": "collision-boost",
+      "code": 34,
+      "name": "Collision Boost",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bumping another machine gives you a boost.",
+      "tags": ["collision", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/collision-boost.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Collision_Boost.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "spin-drift",
+      "code": 35,
+      "name": "Spin Drift",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "technique-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A drift spins you fast enough to shove other machines aside.",
+      "tags": ["drift", "collision"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/spin-drift.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Spin_Drift.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "air",
+          "color": "#7DDE92"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "mini-lv1-quick-charge",
+      "code": 36,
+      "name": "Mini Lv1 Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Level 1 drift charge builds a little faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Mini Lv1 Quick Charge.png, but that file is not on the wiki."
+    },
+    {
+      "id": "lv1-quick-charge",
+      "code": 37,
+      "name": "Lv1 Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Level 1 drift charge builds faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/lv1-quick-charge.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Lv1_Quick_Charge.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "lv2-quick-charge",
+      "code": 38,
+      "name": "Lv2 Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Level 2 drift charge builds faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/lv2-quick-charge.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Lv2_Quick_Charge.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "lv3-quick-charge",
+      "code": 39,
+      "name": "Lv3 Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Level 3 drift charge builds faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/lv3-quick-charge.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Lv3_Quick_Charge.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "lv4-quick-charge",
+      "code": 40,
+      "name": "Lv4 Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Adds a fourth drift-charge level, and that level builds faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Lv4 Quick Charge.png, but that file is not on the wiki."
+    },
+    {
+      "id": "ultimate-charge",
+      "code": 41,
+      "name": "Ultimate Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Adds a fourth drift-charge level. A level-4 charge boost makes you invincible.",
+      "tags": ["drift", "charge", "boost", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ultimate-charge.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ultimate_Charge.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "boundless-charge",
+      "code": 42,
+      "name": "Boundless Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Adds a fourth drift-charge level. A level-4 charge boost ignores runoff slowdown.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Boundless Charge.png, but that file is not on the wiki."
+    },
+    {
+      "id": "collision-charge",
+      "code": 43,
+      "name": "Collision Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bumping a rival while you drift fills the drift gauge a little faster.",
+      "tags": ["drift", "charge", "collision"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Collision Charge.png, but that file is not on the wiki."
+    },
+    {
+      "id": "perfect-charge-boost",
+      "code": 44,
+      "name": "Perfect Charge Boost",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Releasing a drift the instant a level completes makes that boost faster.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/perfect-charge-boost.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Perfect_Charge_Boost.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "break-charge",
+      "code": 45,
+      "name": "Break Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Braking during a drift fills the drift gauge faster.",
+      "tags": ["drift", "charge"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Break Charge.png, but that file is not on the wiki."
+    },
+    {
+      "id": "friction-drift",
+      "code": 46,
+      "name": "Friction Drift",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Drifting on land slows you down, but the drift gauge fills much faster.",
+      "tags": ["drift", "charge"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "B",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank B",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/friction-drift.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Friction_Drift.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "technical-drift",
+      "code": 47,
+      "name": "Technical Drift",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Drifting on land charges faster, and you are more likely to slide out.",
+      "tags": ["drift", "charge"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/technical-drift.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Technical_Drift.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki spells this \"land from\". The other drift gadgets say land form."
+    },
+    {
+      "id": "flawless-counter-drift",
+      "code": 48,
+      "name": "Flawless Counter Drift",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A Counter Drift keeps the entire charge.",
+      "tags": ["drift", "charge"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Flawless Counter Drift.png, but that file is not on the wiki."
+    },
+    {
+      "id": "refined-counter-drift",
+      "code": 49,
+      "name": "Refined Counter Drift",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A Counter Drift keeps more of the charge.",
+      "tags": ["drift", "charge"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Refined Counter Drift.png, but that file is not on the wiki."
+    },
+    {
+      "id": "counter-quick-charge",
+      "code": 50,
+      "name": "Counter Quick Charge",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "charge-upgrade",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "The first land-form Counter Drift fills one gauge level.",
+      "tags": ["drift", "charge", "boost"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 94,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 94 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/counter-quick-charge.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Counter_Quick_Charge.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "drift",
+          "color": "#3BA7FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "speed-mod",
+      "code": 51,
+      "name": "Speed Mod",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Cuts your highest stat and raises Speed by a lot.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Speed Mod.png, but that file is not on the wiki."
+    },
+    {
+      "id": "acceleration-mod",
+      "code": 52,
+      "name": "Acceleration Mod",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Cuts your highest stat and raises Acceleration by a lot.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Acceleration Mod.png, but that file is not on the wiki."
+    },
+    {
+      "id": "handling-mod",
+      "code": 53,
+      "name": "Handling Mod",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Cuts your highest stat and raises Handling by a lot.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Handling Mod.png, but that file is not on the wiki."
+    },
+    {
+      "id": "power-mod",
+      "code": 54,
+      "name": "Power Mod",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Cuts your highest stat and raises Power by a lot.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Power Mod.png, but that file is not on the wiki."
+    },
+    {
+      "id": "boost-mod",
+      "code": 55,
+      "name": "Boost Mod",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Cuts your highest stat and raises Boost by a lot.",
+      "tags": ["stats", "boost"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Boost Mod.png, but that file is not on the wiki."
+    },
+    {
+      "id": "speed-tuner-1",
+      "code": 56,
+      "name": "Speed Tuner 1",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Speed increase. Speed machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/speed-tuner-1.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Speed_Tuner_1.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "speed-tuner-2",
+      "code": 57,
+      "name": "Speed Tuner 2",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Speed increase. Speed machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/speed-tuner-2.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Speed_Tuner_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki states the same effect for Tuner 2 as for Tuner 1."
+    },
+    {
+      "id": "acceleration-tuner-1",
+      "code": 58,
+      "name": "Acceleration Tuner 1",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Acceleration increase. Acceleration machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/acceleration-tuner-1.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Acceleration_Tuner_1.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "acceleration-tuner-2",
+      "code": 59,
+      "name": "Acceleration Tuner 2",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Acceleration increase. Acceleration machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/acceleration-tuner-2.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Acceleration_Tuner_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki states the same effect for Tuner 2 as for Tuner 1."
+    },
+    {
+      "id": "handling-tuner-1",
+      "code": 60,
+      "name": "Handling Tuner 1",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Handling increase. Handling machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/handling-tuner-1.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Handling_Tuner_1.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "handling-tuner-2",
+      "code": 61,
+      "name": "Handling Tuner 2",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Handling increase. Handling machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/handling-tuner-2.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Handling_Tuner_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki states the same effect for Tuner 2 as for Tuner 1."
+    },
+    {
+      "id": "power-tuner-1",
+      "code": 62,
+      "name": "Power Tuner 1",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Power increase. Power machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/power-tuner-1.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Power_Tuner_1.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "power-tuner-2",
+      "code": 63,
+      "name": "Power Tuner 2",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Power increase. Power machines also get extra stat changes.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/power-tuner-2.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Power_Tuner_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki states the same effect for Tuner 2 as for Tuner 1."
+    },
+    {
+      "id": "boost-tuner-1",
+      "code": 64,
+      "name": "Boost Tuner 1",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Boost increase. Boost machines also get extra stat changes.",
+      "tags": ["stats", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-tuner-1.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Tuner_1.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "boost-tuner-2",
+      "code": 65,
+      "name": "Boost Tuner 2",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "stat-upgrade",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A small Boost increase. Boost machines also get extra stat changes.",
+      "tags": ["stats", "boost"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-tuner-2.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Tuner_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "stat",
+          "color": "#F08A5D"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki states the same effect for Tuner 2 as for Tuner 1."
+    },
+    {
+      "id": "air-trick-evolution",
+      "code": 66,
+      "name": "Air Trick Evolution",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Two air tricks change every stat by +1.",
+      "tags": ["air-trick", "stats"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki only says this gadget is upcoming. It does not name version 2.0. The wiki links File:Air Trick Evolution.png, but that file is not on the wiki."
+    },
+    {
+      "id": "damage-evolution",
+      "code": 67,
+      "name": "Damage Evolution",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Taking damage changes every stat by +7.",
+      "tags": ["stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/damage-evolution.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Damage_Evolution.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "item-hit-evolution",
+      "code": 68,
+      "name": "Item Hit Evolution",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Landing an item hit changes every stat by +7.",
+      "tags": ["items", "attack", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-hit-evolution.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Hit_Evolution.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "collision-evolution",
+      "code": 69,
+      "name": "Collision Evolution",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bumping other machines changes every stat by +1.",
+      "tags": ["collision", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/collision-evolution.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Collision_Evolution.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "ring-evolution",
+      "code": 70,
+      "name": "Ring Evolution",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Collecting 10 rings changes every stat by +1.",
+      "tags": ["rings", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-evolution.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Evolution.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "quick-starter",
+      "code": 71,
+      "name": "Quick Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Every stat is +20 during lap 1.",
+      "tags": ["start", "stats"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "E",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank E",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/quick-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Quick_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "super-quick-starter",
+      "code": 72,
+      "name": "Super Quick Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Every stat is +60 during lap 1.",
+      "tags": ["start", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 78,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 78 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/super-quick-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Super_Quick_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "slow-starter",
+      "code": 73,
+      "name": "Slow Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Every stat is +20 during lap 3.",
+      "tags": ["lap3", "stats"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "C+",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank C+",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/slow-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Slow_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "super-slow-starter",
+      "code": 74,
+      "name": "Super Slow Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "power-up",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Every stat is +60 during lap 3.",
+      "tags": ["lap3", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 78,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 78 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/super-slow-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Super_Slow_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "power",
+          "color": "#FF8FA3"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "substitute-item",
+      "code": 75,
+      "name": "Substitute Item",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A homing-item hit drops your held items and makes you invincible.",
+      "tags": ["items", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/substitute-item.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Substitute_Item.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ring-mercy",
+      "code": 76,
+      "name": "Ring Mercy",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Taking damage pays you rings.",
+      "tags": ["rings", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ring-mercy.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ring_Mercy.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "damage-mercy",
+      "code": 77,
+      "name": "Damage Mercy",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Taking damage makes you invincible for a short time.",
+      "tags": ["defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/damage-mercy.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Damage_Mercy.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "item-mercy",
+      "code": 78,
+      "name": "Item Mercy",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Taking damage gives you an item.",
+      "tags": ["items", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-mercy.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Mercy.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "maximum-traction",
+      "code": 79,
+      "name": "Maximum Traction",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Sand and ice no longer make you slip.",
+      "tags": [],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/maximum-traction.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Maximum_Traction.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "second-wind",
+      "code": 80,
+      "name": "Second Wind",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Falling off the course gives you a Boost item.",
+      "tags": ["items", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/second-wind.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Second_Wind.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "bumper-guard",
+      "code": 81,
+      "name": "Bumper Guard",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bumping a wall no longer drops your rings.",
+      "tags": ["rings", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/bumper-guard.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Bumper_Guard.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "invincible-start",
+      "code": 82,
+      "name": "Invincible Start",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You are invincible for a while after the race begins.",
+      "tags": ["start", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/invincible-start.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Invincible_Start.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "strong-finish",
+      "code": 83,
+      "name": "Strong Finish",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You are briefly invincible on lap 3.",
+      "tags": ["lap3", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/strong-finish.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Strong_Finish.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "invincible-finish",
+      "code": 84,
+      "name": "Invincible Finish",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You become invincible when you are close to the finish line.",
+      "tags": ["defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "gold",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Gold Plate (added in 1.4.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.4.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/invincible-finish.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Invincible_Finish.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "item-keeper",
+      "code": 85,
+      "name": "Item Keeper",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Your items are not dropped.",
+      "tags": ["items", "defense"],
+      "unlock": {
+        "type": "grand-prix",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish a Grand Prix",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-keeper.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Keeper.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "quick-recovery",
+      "code": 86,
+      "name": "Quick Recovery",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You get back up from attacks sooner.",
+      "tags": ["defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/quick-recovery.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Quick_Recovery.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "mini-quick-recovery",
+      "code": 87,
+      "name": "Mini Quick Recovery",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You move a little faster after you take a hit.",
+      "tags": ["defense"],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": false
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "The wiki links File:Mini Quick Recovery.png, but that file is not on the wiki."
+    },
+    {
+      "id": "power-through",
+      "code": 88,
+      "name": "Power Through",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Runoff zones slow you down less.",
+      "tags": [],
+      "unlock": {
+        "type": "upcoming",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Upcoming in version 2.0",
+        "inferred": true
+      },
+      "status": "upcoming",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": null,
+        "sourceUrl": null,
+        "credit": "No icon was published for this gadget. The fallback mark is original to this fan project.",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game. The wiki links File:Power Through.png, but that file is not on the wiki."
+    },
+    {
+      "id": "crash-pads",
+      "code": 89,
+      "name": "Crash Pads",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "support",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Damage costs half as many rings.",
+      "tags": ["rings", "defense"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "D-",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank D-",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/crash-pads.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Crash_Pads.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "shield",
+          "color": "#8EB8FF"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "summon-item-box",
+      "code": 90,
+      "name": "Summon Item Box",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Spend 40 rings to call an item.",
+      "tags": ["items", "rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/summon-item-box.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Summon_Item_Box.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "lucky-pair",
+      "code": 91,
+      "name": "Lucky Pair",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You sometimes receive twice as many items.",
+      "tags": ["items"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/lucky-pair.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Lucky_Pair.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "double-down",
+      "code": 92,
+      "name": "Double Down",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Your stats drop, and every item pickup is doubled.",
+      "tags": ["items", "stats"],
+      "unlock": {
+        "type": "plate",
+        "plate": "silver",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Silver Plate (added in 1.2.1)",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": "1.2.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/double-down.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Double_Down.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "inventory-swap",
+      "code": 93,
+      "name": "Inventory Swap",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "A button press swaps the order of your held items.",
+      "tags": ["items"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/inventory-swap.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Inventory_Swap.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "inventory-plus",
+      "code": 94,
+      "name": "Inventory Plus",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You can hold 3 items instead of 2.",
+      "tags": ["items"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/inventory-plus.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Inventory_Plus.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "hazard-item-chance-up",
+      "code": 95,
+      "name": "Hazard Item Chance UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Hazard items show up more often.",
+      "tags": ["items"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/hazard-item-chance-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Hazard_Item_Chance_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "attack-item-chance-up",
+      "code": 96,
+      "name": "Attack Item Chance UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Attack items show up more often.",
+      "tags": ["items", "attack"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/attack-item-chance-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Attack_Item_Chance_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "defense-item-chance-up",
+      "code": 97,
+      "name": "Defense Item Chance UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Defense items show up more often.",
+      "tags": ["items", "defense"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/defense-item-chance-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Defense_Item_Chance_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "boost-item-chance-up",
+      "code": 98,
+      "name": "Boost Item Chance UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Boost items show up more often.",
+      "tags": ["items", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-item-chance-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Item_Chance_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "wisp-chance-up",
+      "code": 99,
+      "name": "Wisp Chance UP",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "item-control",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Wisp items show up more often.",
+      "tags": ["items"],
+      "unlock": {
+        "type": "world-match",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": "D+",
+        "festival": null,
+        "shop": null,
+        "text": "World Match rank D+",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/wisp-chance-up.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Wisp_Chance_UP.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#C084FC"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "go-go-omochao",
+      "code": 100,
+      "name": "Go Go Omochao",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Omochao hands out rings for longer and shows up more often.",
+      "tags": ["items", "rings"],
+      "unlock": {
+        "type": "plate",
+        "plate": "master",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Master Plate (added in 1.3.1)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": "1.3.1",
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/go-go-omochao.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Go_Go_Omochao.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "boost-starter",
+      "code": 101,
+      "name": "Boost Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You start the race holding a Boost.",
+      "tags": ["items", "start", "boost"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "double-boost-specialist",
+      "code": 102,
+      "name": "Double Boost Specialist",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You start holding a Double Boost, and Double Boost can appear in item boxes.",
+      "tags": ["items", "start", "boost"],
+      "unlock": {
+        "type": "start",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Available from the start",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/double-boost-specialist.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Double_Boost_Specialist.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "dark-chao-starter",
+      "code": 103,
+      "name": "Dark Chao Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You start the race holding a Dark Chao.",
+      "tags": ["items", "start"],
+      "unlock": {
+        "type": "grand-prix",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish a Grand Prix",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/dark-chao-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Dark_Chao_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "warp-ring-specialist",
+      "code": 104,
+      "name": "Warp Ring Specialist",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 2,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You start holding a Warp Ring, and Warp Rings can appear in item boxes.",
+      "tags": ["items", "start"],
+      "unlock": {
+        "type": "grand-prix",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish a Grand Prix",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/warp-ring-specialist.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Warp_Ring_Specialist.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "giant-rocket-punch",
+      "code": 105,
+      "name": "Giant Rocket Punch",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Rocket Punch is larger and shows up more often.",
+      "tags": ["items", "attack"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/giant-rocket-punch.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Giant_Rocket_Punch.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "giant-spiked-iron-ball",
+      "code": 106,
+      "name": "Giant Spiked Iron Ball",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "The Spiked Iron Ball is larger and shows up more often.",
+      "tags": ["items", "attack"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/giant-spiked-iron-ball.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Giant_Spiked_Iron_Ball.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "short-fuse",
+      "code": 107,
+      "name": "Short Fuse",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 1,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "Bombs charge faster and show up more often.",
+      "tags": ["items", "attack"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/short-fuse.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Short_Fuse.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "monster-truck-starter",
+      "code": 108,
+      "name": "Monster Truck Starter",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "upgrade-add-item",
+      "slots": 3,
+      "isKit": false,
+      "kitType": null,
+      "kitAffinity": null,
+      "description": "You start the race holding a Monster Truck.",
+      "tags": ["items", "start"],
+      "unlock": {
+        "type": "plate",
+        "plate": "bronze",
+        "races": null,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Reach Bronze Plate",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/monster-truck-starter.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Monster_Truck_Starter.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "item",
+          "color": "#E879F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
     },
     {
       "id": "drift-charge-kit",
       "code": 109,
       "name": "Drift Charge Kit",
-      "names": { "ja": null, "pt": null },
+      "names": {
+        "ja": null,
+        "pt": null
+      },
       "category": "standard-kit",
       "slots": 3,
       "isKit": true,
       "kitType": "standard",
       "kitAffinity": null,
-      "description": "A standard kit themed around drift charge. It fills one whole row.",
-      "tags": ["drift", "charge", "kit"],
+      "description": "The drift gauge builds faster, and handling is a little higher.",
+      "tags": ["kit", "drift", "charge"],
       "unlock": {
         "type": "races",
         "plate": null,
@@ -191,12 +4681,1281 @@
       "kitContains": [],
       "icon": {
         "src": "/icons/gadgets/drift-charge-kit.webp",
-        "sourceUrl": null,
-        "credit": "Placeholder. This skeleton does not ship game icons.",
-        "fallback": { "glyph": "kit", "color": "#C084FC" }
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Drift_Charge_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#67E8F9"
+        }
       },
-      "lastVerified": null,
-      "notes": "PLACEHOLDER. Example seed for milestone M0, not verified in game. kitContains is empty until the real parts are known."
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "item-hoarder-kit",
+      "code": 110,
+      "name": "Item Hoarder Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "standard-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "standard",
+      "kitAffinity": null,
+      "description": "Hold up to 3 items, and finishing a lap grants items.",
+      "tags": ["kit", "items"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 78,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 78 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-hoarder-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Hoarder_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#67E8F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "damage-support-kit",
+      "code": 111,
+      "name": "Damage Support Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "standard-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "standard",
+      "kitAffinity": null,
+      "description": "You are invincible for a while at the start, and falling off grants a Boost item.",
+      "tags": ["kit", "defense", "start", "items", "boost"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 78,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 78 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/damage-support-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Damage_Support_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#67E8F9"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "speed-machine-kit",
+      "code": 112,
+      "name": "Speed Machine Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "machine-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "machine",
+      "kitAffinity": {
+        "machineType": "speed"
+      },
+      "description": "Built around gaining rings and speeding up with them. Speed machines get stat changes.",
+      "tags": ["kit", "rings", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/speed-machine-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Speed_Machine_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#34D399"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "acceleration-machine-kit",
+      "code": 113,
+      "name": "Acceleration Machine Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "machine-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "machine",
+      "kitAffinity": {
+        "machineType": "acceleration"
+      },
+      "description": "Softens the hit of taking damage. Acceleration machines get stat changes.",
+      "tags": ["kit", "defense", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/acceleration-machine-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Acceleration_Machine_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#34D399"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "handling-machine-kit",
+      "code": 114,
+      "name": "Handling Machine Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "machine-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "machine",
+      "kitAffinity": {
+        "machineType": "handling"
+      },
+      "description": "A level-4 charge boost makes you invincible. Handling machines get stat changes.",
+      "tags": ["kit", "charge", "boost", "defense", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/handling-machine-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Handling_Machine_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#34D399"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "power-machine-kit",
+      "code": 115,
+      "name": "Power Machine Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "machine-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "machine",
+      "kitAffinity": {
+        "machineType": "power"
+      },
+      "description": "Colliding with another machine starts a boost. Power machines get stat changes.",
+      "tags": ["kit", "collision", "boost", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/power-machine-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Power_Machine_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#34D399"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "boost-machine-kit",
+      "code": 116,
+      "name": "Boost Machine Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "machine-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "machine",
+      "kitAffinity": {
+        "machineType": "boost"
+      },
+      "description": "A charge boost pays a few rings. Boost machines get stat changes.",
+      "tags": ["kit", "rings", "charge", "boost", "stats"],
+      "unlock": {
+        "type": "races",
+        "plate": null,
+        "races": 62,
+        "worldMatchRank": null,
+        "festival": null,
+        "shop": null,
+        "text": "Finish 62 races",
+        "inferred": true
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-machine-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Machine_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#34D399"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": "Unlock was copied from the wiki row above (a spanned cell) and has not been checked in game."
+    },
+    {
+      "id": "speed-character-kit",
+      "code": 117,
+      "name": "Speed Character Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "character-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "character",
+      "kitAffinity": {
+        "characterType": "speed"
+      },
+      "description": "Invincible at the start, and a clean start pays rings. Speed characters get stat changes.",
+      "tags": ["kit", "start", "rings", "defense", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Angry Birds Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Angry Birds Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/speed-character-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Speed_Character_Kit_2.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FBBF24"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "acceleration-character-kit",
+      "code": 118,
+      "name": "Acceleration Character Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "character-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "character",
+      "kitAffinity": {
+        "characterType": "acceleration"
+      },
+      "description": "Built around catching rivals and gaining rings. Acceleration characters get stat changes.",
+      "tags": ["kit", "rings", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "PAC-MAN Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "PAC-MAN Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/acceleration-character-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Acceleration_Character_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FBBF24"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "handling-character-kit",
+      "code": 119,
+      "name": "Handling Character Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "character-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "character",
+      "kitAffinity": {
+        "characterType": "handling"
+      },
+      "description": "Built around collisions that take rings. Handling characters get stat changes.",
+      "tags": ["kit", "collision", "rings", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Joker Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Joker Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/handling-character-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Handling_Character_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FBBF24"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "power-character-kit",
+      "code": 120,
+      "name": "Power Character Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "character-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "character",
+      "kitAffinity": {
+        "characterType": "power"
+      },
+      "description": "Catch rivals, then boost when you collide with them. Power characters get stat changes.",
+      "tags": ["kit", "collision", "boost", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Minecraft Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Minecraft Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/power-character-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Power_Character_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FBBF24"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "boost-character-kit",
+      "code": 121,
+      "name": "Boost Character Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "character-type-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "character",
+      "kitAffinity": {
+        "characterType": "boost"
+      },
+      "description": "Air tricks help you accelerate. Boost characters get stat changes.",
+      "tags": ["kit", "air-trick", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Hatsune Miku Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Hatsune Miku Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/boost-character-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Boost_Character_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FBBF24"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "perfect-charge-kit",
+      "code": 122,
+      "name": "Perfect Charge Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Strengthens a perfect-timing charge boost, and that timing also pays rings.",
+      "tags": ["kit", "charge", "boost", "rings"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Axel Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": null,
+        "text": "Axel Festival, 150 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/perfect-charge-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Perfect_Charge_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "4th-stage-charge-kit",
+      "code": 123,
+      "name": "4th Stage Charge Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Raises the charge cap to 4 and makes charging easier. A level-4 charge boost grants invincibility.",
+      "tags": ["kit", "charge", "drift", "defense"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Samba de Amigo Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": null,
+        "text": "Samba de Amigo Festival, 150 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/4th-stage-charge-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Stage_4_Charge_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "air-trick-action-kit",
+      "code": 124,
+      "name": "Air Trick Action Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Speeds up air tricks. More than three tricks grants a short invincibility.",
+      "tags": ["kit", "air-trick", "defense"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "TMNT Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": null,
+        "text": "TMNT Festival, 150 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/air-trick-action-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Air_Trick_Action_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "slipstream-kit",
+      "code": 125,
+      "name": "Slipstream Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Strengthens slipstreams. Bumping another machine adds +1 to every stat.",
+      "tags": ["kit", "slipstream", "collision", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Avatar Legends Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": null,
+        "text": "Avatar Legends Festival, 150 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/slipstream-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Slipstream_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "spin-dash-kit",
+      "code": 126,
+      "name": "Spin Dash Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Drift charge becomes holding drift and tapping accelerate. It builds slower and lasts longer.",
+      "tags": ["kit", "drift", "charge"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Sonic 35th Anniversary Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": null,
+        "text": "Sonic 35th Anniversary Festival, 150 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/spin-dash-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Spin_Dash_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "speedy-shortcut-kit",
+      "code": 127,
+      "name": "Speedy Shortcut Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Start with a Boost and a Double Boost. Speed items pay rings inside slowdown zones.",
+      "tags": ["kit", "start", "boost", "rings", "items"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Hatsune Miku 2nd Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": null,
+        "text": "Hatsune Miku 2nd Festival, 140 points (expired)",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/speedy-shortcut-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Speedy_Shortcut_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "item-buster-kit",
+      "code": 128,
+      "name": "Item Buster Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Attack items appear more often, and attacking rivals pays rings.",
+      "tags": ["kit", "items", "attack", "rings"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Mega Man Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Mega Man Festival, 150 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/item-buster-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Item_Buster_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "drift-spinner-kit",
+      "code": 129,
+      "name": "Drift Spinner Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Level 1 drift charge builds a little faster, and drifts spin rivals away.",
+      "tags": ["kit", "drift", "charge"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Captain Majima Festival",
+          "points": 150,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Captain Majima Festival, 150 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/drift-spinner-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Drift_Spinner_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "panel-combo-kit",
+      "code": 130,
+      "name": "Panel Combo Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Dash Panels pay rings, chains pay more, and Power and Handling rise.",
+      "tags": ["kit", "rings", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Puyo Puyo Festival",
+          "points": 120,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Puyo Puyo Festival, 120 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/panel-combo-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Panel_Combo_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "comeback-kit",
+      "code": 131,
+      "name": "Comeback Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Raises the ring cap to 110, and lap 3 grants two items.",
+      "tags": ["kit", "rings", "items", "lap3"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Ichiban Kasuga Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Ichiban Kasuga Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/comeback-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Comeback_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "ace-pilot-kit",
+      "code": 132,
+      "name": "Ace Pilot Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Better performance in flight form, and Dash Panels or Gates pay rings.",
+      "tags": ["kit", "flight", "rings"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "NiGHTS Festival",
+          "points": 120,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "NiGHTS Festival, 120 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/ace-pilot-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Ace_Pilot_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "sea-dog-kit",
+      "code": 133,
+      "name": "Sea Dog Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Better performance in water form, and air tricks come out much faster.",
+      "tags": ["kit", "water", "air-trick"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "SpongeBob SquarePants Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "SpongeBob SquarePants Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/sea-dog-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Sea_Dog_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "all-rounder-kit",
+      "code": 134,
+      "name": "All-Rounder Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Weakens slowdown zones and slippery roads, and greatly raises water and flight stats.",
+      "tags": ["kit", "water", "flight", "stats"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Super Monkey Ball Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Super Monkey Ball Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/all-rounder-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:All-Rounder_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
+    },
+    {
+      "id": "wisp-hoarder-kit",
+      "code": 135,
+      "name": "Wisp Hoarder Kit",
+      "names": {
+        "ja": null,
+        "pt": null
+      },
+      "category": "advanced-kit",
+      "slots": 3,
+      "isKit": true,
+      "kitType": "advanced",
+      "kitAffinity": null,
+      "description": "Built around using many Wisp items. Finishing a lap grants items.",
+      "tags": ["kit", "items"],
+      "unlock": {
+        "type": "festival",
+        "plate": null,
+        "races": null,
+        "worldMatchRank": null,
+        "festival": {
+          "name": "Tangle & Whisper Festival",
+          "points": 140,
+          "expired": true
+        },
+        "shop": {
+          "currency": "donpa-ticket",
+          "cost": 100,
+          "requires": "master-plate"
+        },
+        "text": "Tangle & Whisper Festival, 140 points (expired); 100 Donpa Tickets after Master Plate",
+        "inferred": false
+      },
+      "status": "released",
+      "addedIn": null,
+      "timeTrialValid": null,
+      "stacksWith": [],
+      "effects": [],
+      "kitContains": [],
+      "icon": {
+        "src": "/icons/gadgets/wisp-hoarder-kit.webp",
+        "sourceUrl": "https://sonic.fandom.com/wiki/File:Wisp_Hoarder_Kit.png",
+        "credit": "© SEGA, via Sonic Wiki Zone",
+        "fallback": {
+          "glyph": "kit",
+          "color": "#FB7185"
+        }
+      },
+      "lastVerified": "2026-10-20",
+      "notes": ""
     }
   ]
 }

@@ -18,8 +18,8 @@ This is a personal fan project: a gadget-build randomizer for Sonic Racing: Cros
 - Row capacities are `[top, bottom]`: Normal `[2, 0]`, Bronze `[3, 0]`, Silver `[3, 1]`, Gold `[3, 2]`, Master `[3, 3]`. Normal's two slots are the top row's left two cells and are still an assumption. Do not change capacities on a guess.
 - Overlapping effects are allowed. The MVP randomizer does not try to make "efficient" builds.
 - Gadget `id` slugs and integer `code`s are stable. Never reuse a code, even after a gadget is removed (`status: "removed"`).
-- The current `gadgets.json` is a **placeholder seed**. Do not treat it as the real databank. Filling it in is milestone M2.
-- Write original short gadget descriptions. Do not paste Sonic Wiki Zone text.
+- `src/data/gadgets.json` is the wiki databank (milestones M2 and M3). Refresh it with `npm run import:gadgets`. Do not hand-edit gadget rows; change `scripts/gadget-copy.ts` or the importer, then re-run it.
+- Write original short gadget descriptions. Do not paste Sonic Wiki Zone text. New gadgets need a blurb in `scripts/gadget-copy.ts` or the import refuses them.
 - Do not hotlink wiki or game images. Icons, when they exist, are local files with credit.
 - English only until a later milestone.
 - Keep the fan-project disclaimer: not affiliated with SEGA.
