@@ -24,9 +24,9 @@ body {
 }
 
 #root {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 24px 16px 48px;
+  padding: 28px 20px 56px;
 }
 
 h1,
@@ -38,9 +38,9 @@ p {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -48,12 +48,64 @@ h2 {
 }
 
 .site-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px 24px;
+  display: grid;
+  gap: 20px;
   align-items: end;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 840px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+}
+
+.brand {
+  min-width: 0;
+}
+
+.game-title {
+  margin: 0;
+}
+
+.game-logo {
+  display: block;
+  width: auto;
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.game-title-fallback {
+  display: block;
+  max-width: 22ch;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  background: linear-gradient(180deg, #fff6d0 0%, #f0c14a 52%, #c9841a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app-kicker {
+  margin-top: 10px;
+  color: var(--gold);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .plate-picker {
@@ -78,25 +130,14 @@ h2 {
 }
 
 .plate-picker select:focus-visible,
-.share-link input:focus-visible,
-.secondary:focus-visible,
 .all-gadgets summary:focus-visible {
   outline: 3px solid #7ec8ff;
   outline-offset: 3px;
 }
 
-.eyebrow {
-  margin-bottom: 8px;
-  color: var(--gold);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .lede {
-  max-width: 40rem;
-  margin-top: 12px;
+  max-width: 38rem;
+  margin-top: 8px;
   color: var(--muted);
 }
 
@@ -108,21 +149,53 @@ h2 {
 @media (min-width: 840px) {
   .layout {
     grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .build-panel {
+    position: relative;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .build-panel-fill {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    overflow: hidden;
   }
 
   .build-scroll {
-    max-height: calc(100vh - 180px);
+    flex: 1 1 auto;
+    min-height: 0;
     overflow: auto;
+    scrollbar-color: #4d6784 transparent;
+    scrollbar-width: thin;
+  }
+
+  .build-scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .build-scroll::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: #4d6784;
+    background-clip: padding-box;
   }
 }
 
 .panel {
   min-width: 0;
-  padding: 16px;
-  background: var(--bg-raised);
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 3%), transparent 28%),
+    var(--bg-raised);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgb(0 0 0 / 18%);
 }
 
 .panel-heading {
@@ -134,10 +207,8 @@ h2 {
 }
 
 .panel-heading p,
-.rules,
 .seed-note,
 .empty-build,
-.status,
 .site-footer {
   color: var(--muted);
 }
@@ -330,67 +401,68 @@ h2 {
   border-radius: 999px;
 }
 
-.rules,
-.status,
 .seed-note,
 .empty-build {
   margin-top: 12px;
   font-size: 0.95rem;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.randomize,
-.secondary {
-  min-height: 48px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  font: inherit;
-  font-weight: 750;
-  cursor: pointer;
+.notice {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid #6a5330;
+  border-radius: 12px;
+  background: #2a2116;
+  color: #ffe0a8;
+  font-size: 0.95rem;
 }
 
 .randomize {
-  flex: 1 1 180px;
+  width: 100%;
+  min-height: 56px;
+  margin-top: 16px;
+  padding: 14px 18px;
   border: 0;
-  background: var(--gold);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffe7a3 0%, #f0c14a 46%, #d7a322 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 70%),
+    0 8px 18px rgb(240 193 74 / 16%);
   color: var(--gold-ink);
+  font: inherit;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.secondary {
-  flex: 1 1 160px;
-  border: 1px solid var(--gold);
-  background: transparent;
-  color: var(--gold);
+.randomize:hover {
+  filter: brightness(1.06);
 }
 
-.randomize:hover,
-.secondary:hover {
-  filter: brightness(1.08);
+.randomize:active {
+  transform: translateY(1px);
 }
 
-.randomize:focus-visible {
+.randomize:focus-visible,
+.copy-link:focus-visible,
+.share-link:focus-visible {
   outline: 3px solid #7ec8ff;
   outline-offset: 3px;
 }
 
-.share-link {
+.share-row {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  align-items: center;
   margin-top: 12px;
-  color: var(--muted);
-  font-size: 0.85rem;
 }
 
-.share-link input {
-  width: 100%;
-  min-height: 40px;
+.share-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
   padding: 8px 12px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -398,7 +470,31 @@ h2 {
   background: var(--slot);
   color: var(--ink);
   font: inherit;
+  font-size: 0.85rem;
   text-overflow: ellipsis;
+}
+
+.copy-link {
+  flex: none;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--gold);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.copy-link:hover {
+  background: rgb(240 193 74 / 12%);
+}
+
+.share-fallback {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .build-list {
@@ -472,6 +568,10 @@ h2 {
 }
 
 @media (max-width: 520px) {
+  #root {
+    padding: 18px 14px 40px;
+  }
+
   .tile,
   .plate-locked,
   .plate-empty {
@@ -480,6 +580,14 @@ h2 {
 
   .tile-name {
     font-size: 0.72rem;
+  }
+
+  .app-kicker {
+    letter-spacing: 0.12em;
+  }
+
+  .game-logo {
+    height: 56px;
   }
 }
 

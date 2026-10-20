@@ -2,7 +2,7 @@
 
 A personal fan-made app that rolls a random **valid** gadget build for [Sonic Racing: CrossWorlds](https://sonic.fandom.com/wiki/Sonic_Racing:_CrossWorlds) and shows it on a gadget plate.
 
-Pick a plate from Normal through Master, press Randomize, and copy a share link. Opening that link shows the same build. The full gadget list stays under **All gadgets**. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
+Pick a plate from Normal through Master and press Randomize. The share link under that button matches the address bar, and opening the link shows the same build. The full gadget list stays under **All gadgets**. The full plan, including later milestones, is in [docs/PLAN.md](docs/PLAN.md).
 
 **Fan project, not affiliated with SEGA.**
 
@@ -36,7 +36,7 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:5173>. You should see a Master plate with a random build, a Randomize button, and a share link. Change the plate to watch locked cells appear on the smaller tiers. **All gadgets** at the bottom opens the full list.
+Open <http://localhost:5173>. You should see a Master plate with a random build, a Randomize button, and the share link under it. The address bar hash is that same link. Change the plate to watch locked cells appear on the smaller tiers. **All gadgets** at the bottom opens the full list.
 
 The dev server does **not** install a service worker. Offline mode and "Install app" apply to the production build (see below) or to the deployed site.
 
@@ -116,8 +116,8 @@ After the first online load, airplane mode should still open the app, show the i
 docs/PLAN.md          The full project plan. Read this before a milestone.
 AGENTS.md             Notes for AI assistants working in this repo.
 src/main.tsx          React entry. Registers the service worker.
-src/App.tsx           Home page: plate, build list, share link, and the
-                      collapsible gadget list.
+src/App.tsx           Home page: plate, build list, share-link hash, and
+                      the collapsible gadget list.
 src/components/       React UI. Plate draws each gadget across its slots.
 src/core/             Framework-free TypeScript: plate rules, randomizer,
                       validator, and share codes. No React and no browser
