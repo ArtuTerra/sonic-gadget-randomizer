@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BuildList } from "./components/BuildList.tsx";
 import { Credits } from "./components/Credits.tsx";
 import { DatabankList } from "./components/DatabankList.tsx";
@@ -69,6 +69,11 @@ export default function App() {
   const [build, setBuild] = useState(initial.build);
   const [notice, setNotice] = useState(initial.notice);
   const [logoOk, setLogoOk] = useState(true);
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "manual">(
+    "idle",
+  );
+  const shareInput = useRef<HTMLInputElement>(null);
+  const copyTimer = useRef<number | null>(null);
   const shareUrl = shareUrlFor(build);
 
   useEffect(() => {
@@ -86,6 +91,7 @@ export default function App() {
       try {
         setBuild(decodeBuild(hash, pool));
         setNotice(null);
+        setCopyState("idle");
       } catch {
         setNotice("This build is no longer valid (game update?).");
       }
@@ -97,6 +103,27 @@ export default function App() {
   function showBuild(next: Build) {
     setBuild(next);
     setNotice(null);
+    setCopyState("idle");
+  }
+
+  async function copyShareLink() {
+    window.history.replaceState(null, "", shareUrl);
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("clipboard unavailable");
+      }
+      await navigator.clipboard.writeText(shareUrl);
+      setCopyState("copied");
+      if (copyTimer.current !== null) window.clearTimeout(copyTimer.current);
+      copyTimer.current = window.setTimeout(() => {
+        setCopyState("idle");
+        copyTimer.current = null;
+      }, 2000);
+    } catch {
+      setCopyState("manual");
+      shareInput.current?.focus();
+      shareInput.current?.select();
+    }
   }
 
   const equipped = build.rows.flat().length;
@@ -173,6 +200,31 @@ export default function App() {
           >
             Randomize
           </button>
+          <div className="share-row">
+            <input
+              ref={shareInput}
+              className="share-link"
+              readOnly
+              value={shareUrl}
+              aria-label="Share link"
+              spellCheck={false}
+              onFocus={(event) => {
+                event.currentTarget.select();
+              }}
+            />
+            <button
+              type="button"
+              className="copy-link"
+              onClick={() => void copyShareLink()}
+            >
+              {copyState === "copied" ? "Copied!" : "Copy link"}
+            </button>
+          </div>
+          {copyState === "manual" ? (
+            <p className="share-fallback" role="status">
+              Select the link and copy it.
+            </p>
+          ) : null}
         </section>
 
         <aside className="panel build-panel" aria-labelledby="build-heading">

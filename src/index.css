@@ -38,9 +38,9 @@ p {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -70,13 +70,17 @@ h2 {
 
 .game-logo {
   display: block;
-  width: min(100%, 720px);
-  height: auto;
+  width: auto;
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .game-title-fallback {
   display: block;
-  max-width: 16ch;
+  max-width: 22ch;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
   background: linear-gradient(180deg, #fff6d0 0%, #f0c14a 52%, #c9841a 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -441,9 +445,56 @@ h2 {
   transform: translateY(1px);
 }
 
-.randomize:focus-visible {
+.randomize:focus-visible,
+.copy-link:focus-visible,
+.share-link:focus-visible {
   outline: 3px solid #7ec8ff;
   outline-offset: 3px;
+}
+
+.share-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.share-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--slot);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+}
+
+.copy-link {
+  flex: none;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--gold);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.copy-link:hover {
+  background: rgb(240 193 74 / 12%);
+}
+
+.share-fallback {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .build-list {
@@ -533,6 +584,10 @@ h2 {
 
   .app-kicker {
     letter-spacing: 0.12em;
+  }
+
+  .game-logo {
+    height: 56px;
   }
 }
 
