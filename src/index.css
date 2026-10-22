@@ -264,7 +264,9 @@ h2 {
 .plate-locked,
 .plate-empty {
   min-width: 0;
-  min-height: 104px;
+  /* Fixed: fits a two-line name so the plate never resizes between rolls. */
+  height: 120px;
+  overflow: hidden;
   border-radius: 12px;
 }
 
@@ -348,7 +350,9 @@ h2 {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
   font-size: 0.82rem;
   font-weight: 750;
   line-height: 1.2;
@@ -575,7 +579,7 @@ h2 {
   .tile,
   .plate-locked,
   .plate-empty {
-    min-height: 92px;
+    height: 108px;
   }
 
   .tile-name {
