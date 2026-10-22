@@ -758,3 +758,91 @@ h2 {
 .credits p {
   margin-top: 12px;
 }
+
+.upcoming-toggle {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upcoming-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+
+.owned-picker {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-raised);
+}
+
+.owned-picker summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.owned-picker summary span {
+  color: var(--muted);
+}
+
+.owned-picker summary:focus-visible,
+.owned-actions button:focus-visible,
+.owned-item:focus-visible {
+  outline: 3px solid #7ec8ff;
+  outline-offset: 2px;
+}
+
+.owned-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 10px;
+}
+
+.owned-actions button {
+  min-height: 36px;
+  padding: 4px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--slot);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.owned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+  gap: 6px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0 14px 14px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.owned-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: var(--slot);
+  cursor: pointer;
+  opacity: 0.3;
+  filter: grayscale(1);
+}
+
+.owned-item[aria-pressed="true"] {
+  border-color: var(--gold);
+  opacity: 1;
+  filter: none;
+}

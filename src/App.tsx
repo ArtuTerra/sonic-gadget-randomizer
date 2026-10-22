@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BuildList } from "./components/BuildList.tsx";
 import { Credits } from "./components/Credits.tsx";
 import { DatabankList } from "./components/DatabankList.tsx";
+import { OwnedPicker } from "./components/OwnedPicker.tsx";
 import { Plate } from "./components/Plate.tsx";
 import {
   PLATE_SLOT_COUNTS,
@@ -12,7 +13,10 @@ import {
 } from "./core/plate.ts";
 import {
   decodeBuild,
+  eligibleGadgets,
+  parseIdList,
   randomSeed,
+  serializeIdList,
   randomize,
   shareHash,
   type PoolGadget,
@@ -23,12 +27,46 @@ import "./index.css";
 const GAME_TITLE = "Sonic Racing: CrossWorlds";
 const LOGO_SRC = "/icons/sonic-racing-crossworlds-logo.webp";
 
-const pool: PoolGadget[] = databank.gadgets.map((gadget) => ({
+const catalog: PoolGadget[] = databank.gadgets.map((gadget) => ({
   id: gadget.id,
   code: gadget.code,
   slots: gadget.slots,
   status: gadget.status,
 }));
+
+/** Share links may hold upcoming gadgets, so decoding always accepts them. */
+const pool: PoolGadget[] = eligibleGadgets(catalog, { includeUpcoming: true });
+
+const UNOWNED_KEY = "sgr.unowned.v1";
+const UPCOMING_KEY = "sgr.includeUpcoming.v1";
+
+interface Settings {
+  unowned: Set<string>;
+  includeUpcoming: boolean;
+}
+
+function readStored(key: string): string | null {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStored(key: string, value: string): void {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Storage can be full or blocked. Settings just won't persist.
+  }
+}
+
+function readSettings(): Settings {
+  return {
+    unowned: parseIdList(readStored(UNOWNED_KEY)),
+    includeUpcoming: readStored(UPCOMING_KEY) === "1",
+  };
+}
 
 const gadgetsById = new Map<string, Gadget>(
   databank.gadgets.map((gadget) => [gadget.id, gadget]),
@@ -44,28 +82,46 @@ function shareUrlFor(build: Build): string {
   return url.toString();
 }
 
-function roll(plate: PlateTier): Build {
-  return randomize({ plate, gadgets: pool, seed: randomSeed() });
+function roll(plate: PlateTier, settings: Settings): Build {
+  return randomize({
+    plate,
+    gadgets: eligibleGadgets(catalog, settings),
+    seed: randomSeed(),
+  });
 }
 
-function readInitialRoll(): { build: Build; notice: string | null } {
+function shortfallNotice(build: Build): string | null {
+  const used = build.rows
+    .flat()
+    .reduce((sum, item) => sum + (gadgetsById.get(item.id)?.slots ?? 0), 0);
+  return used < PLATE_SLOT_COUNTS[build.plate]
+    ? "Not enough owned gadgets to fill this plate."
+    : null;
+}
+
+function readInitialRoll(settings: Settings): {
+  build: Build;
+  notice: string | null;
+} {
   const hash = window.location.hash;
   if (hash.includes("b=")) {
     try {
       return { build: decodeBuild(hash, pool), notice: null };
     } catch {
       return {
-        build: roll("master"),
+        build: roll("master", settings),
         notice:
           "This build is no longer valid (game update?). Rolled a new Master build instead.",
       };
     }
   }
-  return { build: roll("master"), notice: null };
+  const build = roll("master", settings);
+  return { build, notice: shortfallNotice(build) };
 }
 
 export default function App() {
-  const [initial] = useState(readInitialRoll);
+  const [settings, setSettings] = useState(readSettings);
+  const [initial] = useState(() => readInitialRoll(settings));
   const [build, setBuild] = useState(initial.build);
   const [notice, setNotice] = useState(initial.notice);
   const [logoOk, setLogoOk] = useState(true);
@@ -102,7 +158,7 @@ export default function App() {
 
   function showBuild(next: Build) {
     setBuild(next);
-    setNotice(null);
+    setNotice(shortfallNotice(next));
     setCopyState("idle");
   }
 
@@ -126,6 +182,17 @@ export default function App() {
     }
   }
 
+  function updateSettings(next: Settings) {
+    setSettings(next);
+    writeStored(UNOWNED_KEY, serializeIdList(next.unowned));
+    writeStored(UPCOMING_KEY, next.includeUpcoming ? "1" : "0");
+  }
+
+  const pickerGadgets = databank.gadgets.filter(
+    (gadget) =>
+      gadget.status === "released" ||
+      (settings.includeUpcoming && gadget.status === "upcoming"),
+  );
   const equipped = build.rows.flat().length;
 
   return (
@@ -165,7 +232,7 @@ export default function App() {
             onChange={(event) => {
               const next = event.target.value;
               if (!isPlateTier(next) || next === build.plate) return;
-              showBuild(roll(next));
+              showBuild(roll(next, settings));
             }}
           >
             {PLATE_TIERS.map((tier) => (
@@ -174,6 +241,19 @@ export default function App() {
               </option>
             ))}
           </select>
+          <label className="upcoming-toggle">
+            <input
+              type="checkbox"
+              checked={settings.includeUpcoming}
+              onChange={(event) => {
+                updateSettings({
+                  ...settings,
+                  includeUpcoming: event.target.checked,
+                });
+              }}
+            />
+            Upcoming
+          </label>
         </div>
       </header>
 
@@ -195,11 +275,18 @@ export default function App() {
             type="button"
             className="randomize"
             onClick={() => {
-              showBuild(roll(build.plate));
+              showBuild(roll(build.plate, settings));
             }}
           >
             Randomize
           </button>
+          <OwnedPicker
+            gadgets={pickerGadgets}
+            unowned={settings.unowned}
+            onChange={(unowned) => {
+              updateSettings({ ...settings, unowned });
+            }}
+          />
           <div className="share-row">
             <input
               ref={shareInput}
