@@ -2,15 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { BuildList } from "./components/BuildList.tsx";
 import { Credits } from "./components/Credits.tsx";
 import { DatabankList } from "./components/DatabankList.tsx";
-import { OwnedPicker } from "./components/OwnedPicker.tsx";
+import { BuildOptions } from "./components/BuildOptions.tsx";
 import { Plate } from "./components/Plate.tsx";
-import {
-  PLATE_SLOT_COUNTS,
-  PLATE_TIERS,
-  isPlateTier,
-  type Build,
-  type PlateTier,
-} from "./core/plate.ts";
+import { PLATE_SLOT_COUNTS, type Build, type PlateTier } from "./core/plate.ts";
 import {
   decodeBuild,
   eligibleGadgets,
@@ -71,10 +65,6 @@ function readSettings(): Settings {
 const gadgetsById = new Map<string, Gadget>(
   databank.gadgets.map((gadget) => [gadget.id, gadget]),
 );
-
-function plateLabel(tier: PlateTier): string {
-  return tier.charAt(0).toUpperCase() + tier.slice(1);
-}
 
 function shareUrlFor(build: Build): string {
   const url = new URL(window.location.href);
@@ -219,51 +209,29 @@ export default function App() {
             </span>
           </h1>
           <p className="app-kicker">Gadget Randomizer</p>
-          <p className="lede">
-            Roll a random valid gadget build. This page's address is a link to
-            the same build.
-          </p>
-        </div>
-        <div className="plate-picker">
-          <label htmlFor="plate-tier">Plate</label>
-          <select
-            id="plate-tier"
-            value={build.plate}
-            onChange={(event) => {
-              const next = event.target.value;
-              if (!isPlateTier(next) || next === build.plate) return;
-              showBuild(roll(next, settings));
-            }}
-          >
-            {PLATE_TIERS.map((tier) => (
-              <option key={tier} value={tier}>
-                {plateLabel(tier)} · {PLATE_SLOT_COUNTS[tier]} slots
-              </option>
-            ))}
-          </select>
-          <label className="upcoming-toggle">
-            <input
-              type="checkbox"
-              checked={settings.includeUpcoming}
-              onChange={(event) => {
-                updateSettings({
-                  ...settings,
-                  includeUpcoming: event.target.checked,
-                });
-              }}
-            />
-            Upcoming
-          </label>
         </div>
       </header>
 
       <main className="layout">
         <section className="panel plate-panel" aria-labelledby="plate-heading">
-          <div className="panel-heading">
-            <h2 id="plate-heading">Gadget plate</h2>
-            <p>
-              {plateLabel(build.plate)} · {PLATE_SLOT_COUNTS[build.plate]} slots
-            </p>
+          <div className="plate-toolbar">
+            <h2 id="plate-heading">Random Gadget Plate</h2>
+            <BuildOptions
+              plate={build.plate}
+              onPlateChange={(next) => {
+                if (next === build.plate) return;
+                showBuild(roll(next, settings));
+              }}
+              includeUpcoming={settings.includeUpcoming}
+              onIncludeUpcomingChange={(includeUpcoming) => {
+                updateSettings({ ...settings, includeUpcoming });
+              }}
+              pickerGadgets={pickerGadgets}
+              unowned={settings.unowned}
+              onUnownedChange={(unowned) => {
+                updateSettings({ ...settings, unowned });
+              }}
+            />
           </div>
           <Plate build={build} gadgetsById={gadgetsById} />
           {notice ? (
@@ -280,13 +248,6 @@ export default function App() {
           >
             Randomize
           </button>
-          <OwnedPicker
-            gadgets={pickerGadgets}
-            unowned={settings.unowned}
-            onChange={(unowned) => {
-              updateSettings({ ...settings, unowned });
-            }}
-          />
           <div className="share-row">
             <input
               ref={shareInput}

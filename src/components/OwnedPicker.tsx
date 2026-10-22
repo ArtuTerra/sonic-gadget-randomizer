@@ -21,14 +21,11 @@ export function OwnedPicker({
   }
 
   return (
-    <details className="owned-picker">
-      <summary>
-        Owned
-        <span>
+    <div className="owned-picker">
+      <div className="owned-actions">
+        <span className="owned-count">
           {owned}/{gadgets.length}
         </span>
-      </summary>
-      <div className="owned-actions">
         <button
           type="button"
           onClick={() => {
@@ -69,6 +66,6 @@ export function OwnedPicker({
           );
         })}
       </ul>
-    </details>
+    </div>
   );
 }
