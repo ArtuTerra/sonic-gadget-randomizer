@@ -2,17 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { BuildList } from "./components/BuildList.tsx";
 import { Credits } from "./components/Credits.tsx";
 import { DatabankList } from "./components/DatabankList.tsx";
+import { BuildOptions } from "./components/BuildOptions.tsx";
 import { Plate } from "./components/Plate.tsx";
-import {
-  PLATE_SLOT_COUNTS,
-  PLATE_TIERS,
-  isPlateTier,
-  type Build,
-  type PlateTier,
-} from "./core/plate.ts";
+import { PLATE_SLOT_COUNTS, type Build, type PlateTier } from "./core/plate.ts";
 import {
   decodeBuild,
+  eligibleGadgets,
+  parseIdList,
   randomSeed,
+  serializeIdList,
   randomize,
   shareHash,
   type PoolGadget,
@@ -23,20 +21,50 @@ import "./index.css";
 const GAME_TITLE = "Sonic Racing: CrossWorlds";
 const LOGO_SRC = "/icons/sonic-racing-crossworlds-logo.webp";
 
-const pool: PoolGadget[] = databank.gadgets.map((gadget) => ({
+const catalog: PoolGadget[] = databank.gadgets.map((gadget) => ({
   id: gadget.id,
   code: gadget.code,
   slots: gadget.slots,
   status: gadget.status,
 }));
 
+/** Share links may hold upcoming gadgets, so decoding always accepts them. */
+const pool: PoolGadget[] = eligibleGadgets(catalog, { includeUpcoming: true });
+
+const UNOWNED_KEY = "sgr.unowned.v1";
+const UPCOMING_KEY = "sgr.includeUpcoming.v1";
+
+interface Settings {
+  unowned: Set<string>;
+  includeUpcoming: boolean;
+}
+
+function readStored(key: string): string | null {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStored(key: string, value: string): void {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Storage can be full or blocked. Settings just won't persist.
+  }
+}
+
+function readSettings(): Settings {
+  return {
+    unowned: parseIdList(readStored(UNOWNED_KEY)),
+    includeUpcoming: readStored(UPCOMING_KEY) === "1",
+  };
+}
+
 const gadgetsById = new Map<string, Gadget>(
   databank.gadgets.map((gadget) => [gadget.id, gadget]),
 );
-
-function plateLabel(tier: PlateTier): string {
-  return tier.charAt(0).toUpperCase() + tier.slice(1);
-}
 
 function shareUrlFor(build: Build): string {
   const url = new URL(window.location.href);
@@ -44,28 +72,46 @@ function shareUrlFor(build: Build): string {
   return url.toString();
 }
 
-function roll(plate: PlateTier): Build {
-  return randomize({ plate, gadgets: pool, seed: randomSeed() });
+function roll(plate: PlateTier, settings: Settings): Build {
+  return randomize({
+    plate,
+    gadgets: eligibleGadgets(catalog, settings),
+    seed: randomSeed(),
+  });
 }
 
-function readInitialRoll(): { build: Build; notice: string | null } {
+function shortfallNotice(build: Build): string | null {
+  const used = build.rows
+    .flat()
+    .reduce((sum, item) => sum + (gadgetsById.get(item.id)?.slots ?? 0), 0);
+  return used < PLATE_SLOT_COUNTS[build.plate]
+    ? "Not enough owned gadgets to fill this plate."
+    : null;
+}
+
+function readInitialRoll(settings: Settings): {
+  build: Build;
+  notice: string | null;
+} {
   const hash = window.location.hash;
   if (hash.includes("b=")) {
     try {
       return { build: decodeBuild(hash, pool), notice: null };
     } catch {
       return {
-        build: roll("master"),
+        build: roll("master", settings),
         notice:
           "This build is no longer valid (game update?). Rolled a new Master build instead.",
       };
     }
   }
-  return { build: roll("master"), notice: null };
+  const build = roll("master", settings);
+  return { build, notice: shortfallNotice(build) };
 }
 
 export default function App() {
-  const [initial] = useState(readInitialRoll);
+  const [settings, setSettings] = useState(readSettings);
+  const [initial] = useState(() => readInitialRoll(settings));
   const [build, setBuild] = useState(initial.build);
   const [notice, setNotice] = useState(initial.notice);
   const [logoOk, setLogoOk] = useState(true);
@@ -102,7 +148,7 @@ export default function App() {
 
   function showBuild(next: Build) {
     setBuild(next);
-    setNotice(null);
+    setNotice(shortfallNotice(next));
     setCopyState("idle");
   }
 
@@ -126,6 +172,17 @@ export default function App() {
     }
   }
 
+  function updateSettings(next: Settings) {
+    setSettings(next);
+    writeStored(UNOWNED_KEY, serializeIdList(next.unowned));
+    writeStored(UPCOMING_KEY, next.includeUpcoming ? "1" : "0");
+  }
+
+  const pickerGadgets = databank.gadgets.filter(
+    (gadget) =>
+      gadget.status === "released" ||
+      (settings.includeUpcoming && gadget.status === "upcoming"),
+  );
   const equipped = build.rows.flat().length;
 
   return (
@@ -152,38 +209,29 @@ export default function App() {
             </span>
           </h1>
           <p className="app-kicker">Gadget Randomizer</p>
-          <p className="lede">
-            Roll a random valid gadget build. This page's address is a link to
-            the same build.
-          </p>
-        </div>
-        <div className="plate-picker">
-          <label htmlFor="plate-tier">Plate</label>
-          <select
-            id="plate-tier"
-            value={build.plate}
-            onChange={(event) => {
-              const next = event.target.value;
-              if (!isPlateTier(next) || next === build.plate) return;
-              showBuild(roll(next));
-            }}
-          >
-            {PLATE_TIERS.map((tier) => (
-              <option key={tier} value={tier}>
-                {plateLabel(tier)} · {PLATE_SLOT_COUNTS[tier]} slots
-              </option>
-            ))}
-          </select>
         </div>
       </header>
 
       <main className="layout">
         <section className="panel plate-panel" aria-labelledby="plate-heading">
-          <div className="panel-heading">
-            <h2 id="plate-heading">Gadget plate</h2>
-            <p>
-              {plateLabel(build.plate)} · {PLATE_SLOT_COUNTS[build.plate]} slots
-            </p>
+          <div className="plate-toolbar">
+            <h2 id="plate-heading">Random Gadget Plate</h2>
+            <BuildOptions
+              plate={build.plate}
+              onPlateChange={(next) => {
+                if (next === build.plate) return;
+                showBuild(roll(next, settings));
+              }}
+              includeUpcoming={settings.includeUpcoming}
+              onIncludeUpcomingChange={(includeUpcoming) => {
+                updateSettings({ ...settings, includeUpcoming });
+              }}
+              pickerGadgets={pickerGadgets}
+              unowned={settings.unowned}
+              onUnownedChange={(unowned) => {
+                updateSettings({ ...settings, unowned });
+              }}
+            />
           </div>
           <Plate build={build} gadgetsById={gadgetsById} />
           {notice ? (
@@ -195,7 +243,7 @@ export default function App() {
             type="button"
             className="randomize"
             onClick={() => {
-              showBuild(roll(build.plate));
+              showBuild(roll(build.plate, settings));
             }}
           >
             Randomize

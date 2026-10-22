@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "icons/*.png"],
+      includeAssets: ["favicon-32.png", "apple-touch-icon.png", "icons/*.png"],
       manifest: {
         name: "CrossWorlds Gadget Randomizer",
         short_name: "Gadget Rolls",

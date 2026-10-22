@@ -264,7 +264,9 @@ h2 {
 .plate-locked,
 .plate-empty {
   min-width: 0;
-  min-height: 104px;
+  /* Fixed: fits a two-line name so the plate never resizes between rolls. */
+  height: 120px;
+  overflow: hidden;
   border-radius: 12px;
 }
 
@@ -348,7 +350,9 @@ h2 {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
   font-size: 0.82rem;
   font-weight: 750;
   line-height: 1.2;
@@ -575,7 +579,7 @@ h2 {
   .tile,
   .plate-locked,
   .plate-empty {
-    min-height: 92px;
+    height: 108px;
   }
 
   .tile-name {
@@ -757,4 +761,246 @@ h2 {
 
 .credits p {
   margin-top: 12px;
+}
+
+.owned-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 10px;
+}
+
+.owned-actions button {
+  min-height: 36px;
+  padding: 4px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--slot);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.owned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+  gap: 6px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0 14px 14px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.owned-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: var(--slot);
+  cursor: pointer;
+  opacity: 0.3;
+  filter: grayscale(1);
+}
+
+.owned-item[aria-pressed="true"] {
+  border-color: var(--gold);
+  opacity: 1;
+  filter: none;
+}
+
+.owned-picker {
+  margin-top: 6px;
+}
+
+.owned-actions {
+  align-items: center;
+  padding: 0 0 10px;
+}
+
+.owned-count {
+  margin-right: auto;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.owned-grid {
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+}
+
+.owned-actions button:focus-visible,
+.owned-item:focus-visible,
+.gear-button:focus-visible,
+.options-close:focus-visible,
+.options-field select:focus-visible,
+.switch:focus-visible {
+  outline: 3px solid #7ec8ff;
+  outline-offset: 2px;
+}
+
+.plate-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.gear-button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-raised);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.gear-button:hover {
+  color: var(--ink);
+}
+
+.gear-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.options-sheet {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(420px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.options-sheet::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+
+.options-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.options-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.options-close {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.options-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.options-field select {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-raised);
+  color: var(--ink);
+  font: inherit;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--line);
+  cursor: pointer;
+  transition: background 0.15s;
+  appearance: none;
+}
+
+.switch::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform 0.15s;
+  content: "";
+}
+
+.switch:checked {
+  background: var(--gold);
+}
+
+.switch:checked::after {
+  transform: translateX(20px);
+}
+
+@media (max-width: 520px) {
+  .options-sheet {
+    inset: auto 0 0;
+    width: 100vw;
+    height: auto;
+    max-height: 85dvh;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 18px 18px 0 0;
+  }
+
+  .options-body {
+    max-height: 85dvh;
+  }
+}
+
+.plate-toolbar h2 {
+  margin: 0;
+  font-size: 1.05rem;
 }

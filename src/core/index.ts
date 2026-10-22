@@ -36,3 +36,9 @@ export {
   encodeBuild,
   shareHash,
 } from "./encode.ts";
+export {
+  eligibleGadgets,
+  parseIdList,
+  serializeIdList,
+  type PoolFilter,
+} from "./filter.ts";
